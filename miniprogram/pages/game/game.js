@@ -89,10 +89,10 @@ Page({
       draw: '拿 1 张牌：从牌堆摸 2 选 1，或从弃牌堆拿顶牌。',
       choose: '请选择保留哪一张牌。',
       discard: '请选择把剩下的牌弃到哪个弃牌堆。',
-      action: '可打出 Duo，或在达到 7 分后 STOP / LAST CHANCE。',
+      action: '可打出组合，或在达到 7 分后立即停止 / 最后机会。',
       crabChoice: '螃蟹效果：从一个弃牌堆拿 1 张牌。',
-      lastChanceAi: '你宣布 LAST CHANCE，AI 正在进行最后一回合。',
-      lastChancePlayer: 'AI 宣布 LAST CHANCE，这是你的最后一回合。',
+      lastChanceAi: '你宣布最后机会，AI 正在进行最后一回合。',
+      lastChancePlayer: 'AI 宣布最后机会，这是你的最后一回合。',
       ai: 'AI 正在行动。',
       settlement: '本轮已结束，进入结算。',
       gameover: '游戏结束。'
@@ -290,7 +290,7 @@ Page({
 
   playPair() {
     const gameState = this.data.gameState
-    if (!this.ensurePhase('action', '当前不能打出 Duo')) return
+    if (!this.ensurePhase('action', '当前不能打出组合')) return
     const selected = gameState.selectedHandIndexes.slice().sort((a, b) => a - b)
     if (selected.length !== 2) {
       this.showToast('请先选择 2 张手牌')
@@ -302,7 +302,7 @@ Page({
     const secondCard = player.hand[selected[1]]
     const pairType = getPairType(firstCard, secondCard)
     if (!pairType) {
-      this.showToast('这两张牌不能组成 Duo')
+      this.showToast('这两张牌不能组成组合')
       return
     }
 
@@ -320,7 +320,7 @@ Page({
       effect: this.getPairEffectText(pairType)
     })
     gameState.selectedHandIndexes = []
-    this.addLog(gameState, `你打出了 ${this.getPairName(pairType)} Duo。`)
+    this.addLog(gameState, `你打出了 ${this.getPairName(pairType)}组合。`)
     this.applyPlayerPairEffect(gameState, pairType)
   },
 
@@ -332,9 +332,9 @@ Page({
         gameState.deck = drawResult.deck
         player.hand.push(drawResult.drawnCards[0])
         if (this.checkMermaidWin(gameState)) return
-        this.addLog(gameState, '鱼 Duo 效果：你从牌堆摸了 1 张。')
+        this.addLog(gameState, '鱼组合效果：你从牌堆摸了 1 张。')
       } else {
-        this.addLog(gameState, '鱼 Duo 效果无法触发：牌堆为空。')
+        this.addLog(gameState, '鱼组合效果无法触发：牌堆为空。')
       }
       gameState.phase = 'action'
       this.updateGameState(gameState)
@@ -343,14 +343,14 @@ Page({
 
     if (pairType === 'boat') {
       gameState.phase = 'draw'
-      this.addLog(gameState, '船 Duo 效果：你获得一个额外回合。')
+      this.addLog(gameState, '船组合效果：你获得一个额外回合。')
       this.updateGameState(gameState)
       return
     }
 
     if (pairType === 'crab') {
       if (!gameState.discardPileA.length && !gameState.discardPileB.length) {
-        this.addLog(gameState, '螃蟹 Duo 效果无法触发：弃牌堆为空。')
+        this.addLog(gameState, '螃蟹组合效果无法触发：弃牌堆为空。')
         gameState.phase = 'action'
       } else {
         gameState.phase = 'crabChoice'
@@ -398,7 +398,7 @@ Page({
     const gameState = this.data.gameState
     if (!this.canPlayerCall()) return
     gameState.roundEndReason = 'playerStop'
-    this.finishRound(gameState, 'stop', '你选择 STOP，本轮进入正常结算。')
+    this.finishRound(gameState, 'stop', '你选择立即停止，本轮进入正常结算。')
   },
 
   callLastChance() {
@@ -406,7 +406,7 @@ Page({
     if (!this.canPlayerCall()) return
     gameState.phase = 'lastChanceAi'
     gameState.roundEndReason = 'playerLastChance'
-    this.addLog(gameState, '你宣布 LAST CHANCE，AI 将进行最后一回合。')
+    this.addLog(gameState, '你宣布最后机会，AI 将进行最后一回合。')
     this.updateGameState(gameState)
 
     setTimeout(() => {
@@ -419,7 +419,7 @@ Page({
     if (!this.ensurePhase('action', '当前不能结束回合')) return
     if (gameState.isLastChanceFinalTurn) {
       gameState.isLastChanceFinalTurn = false
-      this.finishRound(gameState, 'lastChance', '你完成最后一回合，进入 LAST CHANCE 结算。')
+      this.finishRound(gameState, 'lastChance', '你完成最后一回合，进入最后机会结算。')
       return
     }
     gameState.currentPlayerIndex = 1
@@ -440,7 +440,7 @@ Page({
     if (this.tryAiPlayPair(gameState)) return
 
     if (isLastChanceTurn) {
-      this.finishRound(gameState, 'lastChance', 'AI 完成最后一回合，进入 LAST CHANCE 结算。')
+      this.finishRound(gameState, 'lastChance', 'AI 完成最后一回合，进入最后机会结算。')
       return
     }
 
@@ -452,7 +452,7 @@ Page({
     const ai = gameState.players[1]
     if (ai.score >= CALL_SCORE && Math.random() < 0.25) {
       gameState.roundEndReason = 'aiStop'
-      this.finishRound(gameState, 'stop', 'AI 选择 STOP，本轮进入正常结算。')
+      this.finishRound(gameState, 'stop', 'AI 选择立即停止，本轮进入正常结算。')
       return
     }
 
@@ -461,7 +461,7 @@ Page({
       gameState.currentPlayerIndex = 0
       gameState.phase = 'draw'
       gameState.isLastChanceFinalTurn = true
-      this.addLog(gameState, 'AI 宣布 LAST CHANCE，这是你的最后一回合。')
+      this.addLog(gameState, 'AI 宣布最后机会，这是你的最后一回合。')
       this.updateGameState(gameState)
       return
     }
@@ -534,7 +534,7 @@ Page({
       score: 1,
       effect: this.getPairEffectText(pairType)
     })
-    this.addLog(gameState, `AI 打出了 ${this.getPairName(pairType)} Duo。`)
+    this.addLog(gameState, `AI 打出了 ${this.getPairName(pairType)}组合。`)
     if (this.applyAiPairEffect(gameState, pairType)) return true
     this.updateScores(gameState)
     return false
@@ -547,12 +547,12 @@ Page({
       gameState.deck = drawResult.deck
       ai.hand.push(drawResult.drawnCards[0])
       if (this.checkMermaidWin(gameState)) return true
-      this.addLog(gameState, 'AI 触发鱼 Duo，摸了 1 张牌。')
+      this.addLog(gameState, 'AI 触发鱼组合，摸了 1 张牌。')
     }
 
     if (pairType === 'boat') {
       if (this.aiTakeCard(gameState)) return true
-      this.addLog(gameState, 'AI 触发船 Duo，额外行动了一次。')
+      this.addLog(gameState, 'AI 触发船组合，额外行动了一次。')
     }
 
     if (pairType === 'crab') {
@@ -564,7 +564,7 @@ Page({
         const card = pile === 'A' ? gameState.discardPileA.pop() : gameState.discardPileB.pop()
         ai.hand.push(card)
         if (this.checkMermaidWin(gameState)) return true
-        this.addLog(gameState, `AI 触发螃蟹 Duo，从弃牌堆 ${pile} 拿牌。`)
+        this.addLog(gameState, `AI 触发螃蟹组合，从弃牌堆 ${pile} 拿牌。`)
       }
     }
 
@@ -575,7 +575,7 @@ Page({
         const stolenCard = player.hand.splice(stealIndex, 1)[0]
         ai.hand.push(stolenCard)
         if (this.checkMermaidWin(gameState)) return true
-        this.addLog(gameState, 'AI 触发鲨鱼 + 游泳者 Duo，偷走你 1 张手牌。')
+        this.addLog(gameState, 'AI 触发鲨鱼 + 游泳者组合，偷走你 1 张手牌。')
       }
     }
 
@@ -681,7 +681,7 @@ Page({
       fish: '鱼',
       sharkSwimmer: '鲨鱼 + 游泳者'
     }
-    return pairNames[pairType] || 'Duo'
+    return pairNames[pairType] || '组合'
   },
 
   getPairEffectText(pairType) {
