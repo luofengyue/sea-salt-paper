@@ -2,102 +2,181 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
-  padding: 72rpx 40rpx 64rpx;
+  padding: 56rpx 32rpx 64rpx;
   box-sizing: border-box;
-  background: #f6f8fb;
+  background:
+    linear-gradient(135deg, rgba(47, 142, 188, 0.07) 0, rgba(47, 142, 188, 0.07) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f6f8f4 0%, #edf8f7 48%, #f7fbf6 100%);
 }
 
 .header {
   width: 100%;
-  margin-bottom: 40rpx;
-  text-align: center;
+  margin-bottom: 30rpx;
+  padding: 8rpx 8rpx 0;
+  box-sizing: border-box;
+}
+
+.kicker {
+  display: block;
+  color: #2f8ebc;
+  font-size: 23rpx;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 
 .title {
   display: block;
-  color: #1f2933;
-  font-size: 48rpx;
+  margin-top: 8rpx;
+  color: #174a63;
+  font-size: 52rpx;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.18;
+}
+
+.room-ticket {
+  min-height: 132rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28rpx;
+  padding: 0 30rpx;
+  border: 4rpx solid #ffffff;
+  border-radius: 20rpx;
+  background: #174a63;
+  box-sizing: border-box;
+  box-shadow: 0 18rpx 36rpx rgba(23, 74, 99, 0.18);
+}
+
+.ticket-label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 26rpx;
+  line-height: 1.4;
 }
 
 .room-number {
-  display: block;
-  margin-top: 18rpx;
-  color: #2f80ed;
-  font-size: 34rpx;
-  font-weight: 600;
-  line-height: 1.5;
+  color: #f2c94c;
+  font-size: 54rpx;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .player-list {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+  padding: 18rpx;
+  border-radius: 22rpx;
+  background: rgba(190, 233, 232, 0.38);
+  box-sizing: border-box;
 }
 
 .player-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 96rpx;
-  padding: 0 28rpx;
-  border-radius: 12rpx;
-  background: #ffffff;
-  box-shadow: 0 8rpx 24rpx rgba(31, 41, 51, 0.06);
+  min-height: 150rpx;
+  padding: 20rpx;
+  border: 3rpx solid #ffffff;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  box-shadow: 0 12rpx 26rpx rgba(23, 74, 99, 0.08);
+}
+
+.player-avatar {
+  width: 56rpx;
+  height: 56rpx;
+  flex-shrink: 0;
+  margin-right: 16rpx;
+  border-radius: 16rpx;
+  background: #bee9e8;
+  color: #174a63;
+  font-size: 22rpx;
+  font-weight: 700;
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.active-avatar {
+  background: #f26d5b;
+  color: #ffffff;
 }
 
 .player-main {
   display: flex;
-  align-items: center;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
 }
 
 .player-seat {
-  width: 112rpx;
   color: #8a94a6;
-  font-size: 26rpx;
-  line-height: 1.5;
+  font-size: 22rpx;
+  line-height: 1.4;
 }
 
 .player-name {
   color: #4b5563;
-  font-size: 30rpx;
+  font-size: 29rpx;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.4;
+  word-break: break-all;
 }
 
 .player-name.active {
-  color: #1f2933;
+  color: #174a63;
   font-weight: 700;
 }
 
 .player-status {
-  color: #18a058;
-  font-size: 26rpx;
-  line-height: 1.5;
+  align-self: flex-start;
+  margin-left: 10rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 999rpx;
+  background: #bee9e8;
+  color: #174a63;
+  font-size: 20rpx;
+  line-height: 1.3;
 }
 
 .actions {
   width: 100%;
-  margin-top: 48rpx;
+  margin-top: 34rpx;
   display: flex;
   flex-direction: column;
-  gap: 24rpx;
+  gap: 18rpx;
 }
 
 .action-button {
   width: 100%;
   height: 88rpx;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
   background: #ffffff;
-  color: #1f2933;
+  color: #174a63;
   font-size: 30rpx;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 88rpx;
-  box-shadow: 0 8rpx 24rpx rgba(31, 41, 51, 0.06);
+  box-shadow: 0 12rpx 28rpx rgba(23, 74, 99, 0.08);
+}
+
+.action-icon {
+  display: inline-block;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 12rpx;
+  border-radius: 10rpx;
+  background: #bee9e8;
+  color: #174a63;
+  font-size: 22rpx;
+  line-height: 38rpx;
+  text-align: center;
+  vertical-align: 2rpx;
+}
+
+.primary .action-icon {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .action-button::after {
@@ -105,10 +184,16 @@
 }
 
 .action-button.primary {
-  background: #2f80ed;
+  background: #2f8ebc;
   color: #ffffff;
+  box-shadow: 0 16rpx 34rpx rgba(47, 142, 188, 0.2);
 }
 
 .action-button.secondary {
-  color: #6b7280;
+  color: #7b8794;
+}
+
+.button-press {
+  opacity: 0.86;
+  transform: scale(0.99);
 }

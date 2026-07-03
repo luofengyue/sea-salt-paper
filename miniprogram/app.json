@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/lobby/lobby",
     "pages/home/home",
     "pages/game/game",
     "pages/tutorial/tutorial",
@@ -8,7 +9,7 @@
     "pages/result/result"
   ],
   "window": {
-    "navigationBarTitleText": "海盐折纸",
+    "navigationBarTitleText": "桌游大厅",
     "navigationBarBackgroundColor": "#f7f7f7",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#ffffff"

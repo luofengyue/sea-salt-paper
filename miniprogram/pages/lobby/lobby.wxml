@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="header">
+    <text class="kicker">Board Game Shelf</text>
+    <text class="title">桌游大厅</text>
+    <text class="subtitle">选择一个桌游开始练习</text>
+  </view>
+
+  <view class="game-grid">
+    <button class="game-card primary-card" bindtap="openSeaSaltPaper" hover-class="card-press">
+      <view class="game-art">
+        <view class="paper-shadow"></view>
+        <view class="fold fold-blue"></view>
+        <view class="fold fold-mint"></view>
+        <view class="fold fold-coral"></view>
+      </view>
+      <view class="game-info">
+        <text class="game-title">海盐折纸</text>
+        <text class="game-subtitle">轻量单机练习版</text>
+        <text class="game-tag">可游玩</text>
+      </view>
+    </button>
+
+    <button class="game-card placeholder-card" bindtap="showComingSoon" hover-class="card-press">
+      <view class="placeholder-icon">+</view>
+      <text class="placeholder-title">预留桌游</text>
+      <text class="placeholder-subtitle">后续添加</text>
+    </button>
+  </view>
+</view>

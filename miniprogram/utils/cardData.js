@@ -47,7 +47,7 @@ const cards = [
   {
     id: 'mermaid',
     name: '美人鱼',
-    type: 'Mermaid',
+    type: '美人鱼',
     count: 4,
     colors: ['white', 'white', 'white', 'white'],
     effect: '按你最多的颜色计分；多张美人鱼依次计算不同颜色。',
@@ -56,7 +56,7 @@ const cards = [
   {
     id: 'shell',
     name: '贝壳',
-    type: 'Collector',
+    type: '收集',
     count: 6,
     colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green', 'gray'],
     effect: '按数量计分：1/2/3/4/5/6 张为 0/2/4/6/8/10 分。',
@@ -65,7 +65,7 @@ const cards = [
   {
     id: 'octopus',
     name: '章鱼',
-    type: 'Collector',
+    type: '收集',
     count: 5,
     colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green'],
     effect: '按数量计分：1/2/3/4/5 张为 0/3/6/9/12 分。',
@@ -74,7 +74,7 @@ const cards = [
   {
     id: 'penguin',
     name: '企鹅',
-    type: 'Collector',
+    type: '收集',
     count: 3,
     colors: ['darkBlue', 'lightBlue', 'black'],
     effect: '按数量计分：1/2/3 张为 1/3/5 分。',
@@ -83,7 +83,7 @@ const cards = [
   {
     id: 'sailor',
     name: '水手',
-    type: 'Collector',
+    type: '收集',
     count: 2,
     colors: ['yellow', 'green'],
     effect: '按数量计分：1/2 张为 0/5 分。',
@@ -92,7 +92,7 @@ const cards = [
   {
     id: 'lighthouse',
     name: '灯塔',
-    type: 'Multiplier',
+    type: '倍率',
     count: 1,
     colors: ['lightOrange'],
     effect: '每张船额外 1 分。',
@@ -101,7 +101,7 @@ const cards = [
   {
     id: 'shoal',
     name: '鱼群',
-    type: 'Multiplier',
+    type: '倍率',
     count: 1,
     colors: ['purple'],
     effect: '每张鱼额外 1 分。',
@@ -110,7 +110,7 @@ const cards = [
   {
     id: 'penguinColony',
     name: '企鹅群',
-    type: 'Multiplier',
+    type: '倍率',
     count: 1,
     colors: ['gray'],
     effect: '每张企鹅额外 2 分。',
@@ -119,7 +119,7 @@ const cards = [
   {
     id: 'captain',
     name: '船长',
-    type: 'Multiplier',
+    type: '倍率',
     count: 1,
     colors: ['pink'],
     effect: '每张水手额外 3 分。',

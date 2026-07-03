@@ -1,16 +1,18 @@
 <view class="page">
   <view class="header">
+    <text class="kicker">Score Sheet</text>
     <text class="title">结算页面</text>
     <text class="subtitle" wx:if="{{result}}">{{result.roundEndReasonText}} · {{result.scoringModeText}}</text>
   </view>
 
   <view class="empty" wx:if="{{!result}}">
     <text class="empty-text">暂无结算数据</text>
-    <button class="action-button primary" bindtap="goHome">返回首页</button>
+    <button class="action-button primary" bindtap="goHome" hover-class="button-press"><text class="action-icon">⌂</text>返回首页</button>
   </view>
 
   <view class="result-card" wx:if="{{result}}">
     <view class="score-row">
+      <view class="player-token player-token-you">你</view>
       <text class="player-name">你</text>
       <view class="score-info">
         <text class="round-score">本轮 {{result.player.score}} 分</text>
@@ -20,6 +22,7 @@
     </view>
 
     <view class="score-row">
+      <view class="player-token">AI</view>
       <text class="player-name">AI</text>
       <view class="score-info">
         <text class="round-score">本轮 {{result.ai.score}} 分</text>
@@ -31,13 +34,15 @@
 
   <view class="pair-card" wx:if="{{result}}">
     <text class="section-title">{{result.winnerText}}</text>
-    <text class="pair-line">你：{{result.player.playedPairs.length}} 组</text>
-    <text class="pair-line">AI：{{result.ai.playedPairs.length}} 组</text>
+    <view class="pair-grid">
+      <text class="pair-line">你：{{result.player.playedPairs.length}} 组</text>
+      <text class="pair-line">AI：{{result.ai.playedPairs.length}} 组</text>
+    </view>
   </view>
 
   <view class="actions" wx:if="{{result}}">
-    <button class="action-button primary" wx:if="{{!result.isGameOver}}" bindtap="nextRound">下一轮</button>
-    <button class="action-button primary" wx:if="{{result.isGameOver}}" bindtap="restartGame">重新开始</button>
-    <button class="action-button" bindtap="goHome">返回大厅</button>
+    <button class="action-button primary" wx:if="{{!result.isGameOver}}" bindtap="nextRound" hover-class="button-press"><text class="action-icon">→</text>下一轮</button>
+    <button class="action-button primary" wx:if="{{result.isGameOver}}" bindtap="restartGame" hover-class="button-press"><text class="action-icon">↻</text>重新开始</button>
+    <button class="action-button" bindtap="goHome" hover-class="button-press"><text class="action-icon">⌂</text>返回大厅</button>
   </view>
 </view>

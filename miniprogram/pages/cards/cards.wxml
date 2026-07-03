@@ -1,11 +1,18 @@
 <scroll-view class="page" scroll-y>
   <view class="header">
+    <text class="kicker">Card Archive</text>
     <text class="title">牌库图鉴</text>
-    <text class="subtitle">当前测试卡牌一览</text>
+    <text class="subtitle">海洋折纸卡牌一览</text>
   </view>
 
   <view class="card-list">
     <view class="card-item" wx:for="{{cards}}" wx:key="id">
+      <view class="card-art">
+        <view class="art-fold fold-main"></view>
+        <view class="art-fold fold-light"></view>
+        <view class="art-fold fold-coral"></view>
+        <text class="art-name">{{item.name}}</text>
+      </view>
       <view class="card-top">
         <text class="card-name">{{item.name}}</text>
         <text class="card-score">{{item.count}} 张</text>
@@ -21,5 +28,5 @@
     </view>
   </view>
 
-  <button class="home-button" bindtap="goHome">返回首页</button>
+  <button class="home-button" bindtap="goHome" hover-class="button-press">返回首页</button>
 </scroll-view>

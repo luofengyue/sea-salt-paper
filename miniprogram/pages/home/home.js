@@ -1,4 +1,15 @@
 Page({
+  goToLobby() {
+    wx.navigateBack({
+      delta: 1,
+      fail() {
+        wx.reLaunch({
+          url: '/pages/lobby/lobby'
+        })
+      }
+    })
+  },
+
   goToGame() {
     wx.navigateTo({
       url: '/pages/game/game'

@@ -1,38 +1,45 @@
 <scroll-view class="page" scroll-y>
   <view class="header">
+    <text class="kicker">Rule Guide</text>
     <text class="title">规则教程</text>
     <text class="subtitle">按 Sea Salt & Paper 真实规则简化实现</text>
   </view>
 
   <view class="section">
-    <text class="section-title">1. 游戏目标</text>
+    <text class="section-index">01</text>
+    <text class="section-title">游戏目标</text>
     <text class="section-text">收集海洋折纸卡牌，通过手牌和打出的组合得分。多轮累计到 40 分后比较总分，分数更高的一方获胜。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">2. 回合流程</text>
+    <text class="section-index">02</text>
+    <text class="section-title">回合流程</text>
     <text class="section-text">轮到你时，先拿 1 张牌。可以从牌堆摸 2 张并保留 1 张、弃掉 1 张；也可以直接从任意弃牌堆拿最上面 1 张。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">3. 摸牌和弃牌</text>
+    <text class="section-index">03</text>
+    <text class="section-title">摸牌和弃牌</text>
     <text class="section-text">从牌堆摸 2 张时，保留的牌加入手牌，另一张放到弃牌堆 A 或 B。如果某个弃牌堆为空，弃牌必须放到空的弃牌堆。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">4. 打出组合</text>
+    <text class="section-index">04</text>
+    <text class="section-title">打出组合</text>
     <text class="section-text">拿牌后可以打出组合：螃蟹+螃蟹、船+船、鱼+鱼、鲨鱼+游泳者。每个组合价值 1 分，并触发对应效果。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">5. 立即停止和最后机会</text>
+    <text class="section-index">05</text>
+    <text class="section-title">立即停止和最后机会</text>
     <text class="section-text">当你的估分达到 7 分后，可以选择立即停止直接结算；也可以选择最后机会，让对手再进行最后一回合，然后按冒险规则结算。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">6. 计分结算</text>
+    <text class="section-index">06</text>
+    <text class="section-title">计分结算</text>
     <text class="section-text">组合牌、收集牌、倍率牌和美人鱼都会计分。最后机会成功时，喊停方获得卡牌分和颜色奖励；失败时只得颜色奖励。</text>
   </view>
 
-  <button class="home-button" bindtap="goHome">返回首页</button>
+  <button class="home-button" bindtap="goHome" hover-class="button-press">返回首页</button>
 </scroll-view>
