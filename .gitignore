@@ -1,0 +1,12 @@
+node_modules/
+.npm-cache/
+tools/nodejs/
+project.private.config.json
+
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+dist/
+coverage/

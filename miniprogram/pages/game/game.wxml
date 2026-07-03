@@ -1,0 +1,94 @@
+<view class="page">
+  <view class="phase-banner">
+    <text class="phase-title">AI 练习</text>
+    <text class="phase-text">{{phaseText}}</text>
+  </view>
+
+  <view class="game-board" wx:if="{{gameState}}">
+    <view class="ai-area">
+      <view>
+        <text class="area-label">AI 区域</text>
+        <text class="area-main">AI 手牌 {{gameState.players[1].hand.length}} 张</text>
+      </view>
+      <text class="area-side">估分 {{aiScorePreview}} · Duo {{gameState.players[1].playedPairs.length}} 组</text>
+    </view>
+
+    <view class="pile-area">
+      <view class="pile-card {{canTakeDiscardA || canChooseDiscardPile ? 'pile-clickable' : ''}} {{canChooseDiscardPile ? 'pile-target' : ''}}" data-pile="A" bindtap="handleDiscardPileTap" hover-class="pile-press">
+        <text class="pile-title">弃牌堆 A</text>
+        <text class="pile-value">{{discardPileATopName}}</text>
+      </view>
+
+      <view class="deck-card {{canDraw ? 'pile-clickable' : ''}}" bindtap="handleDeckTap" hover-class="pile-press">
+        <text class="pile-title">牌堆</text>
+        <text class="deck-count">{{gameState.deck.length}}</text>
+        <text class="pile-desc">剩余张数</text>
+      </view>
+
+      <view class="pile-card {{canTakeDiscardB || canChooseDiscardPile ? 'pile-clickable' : ''}} {{canChooseDiscardPile ? 'pile-target' : ''}}" data-pile="B" bindtap="handleDiscardPileTap" hover-class="pile-press">
+        <text class="pile-title">弃牌堆 B</text>
+        <text class="pile-value">{{discardPileBTopName}}</text>
+      </view>
+    </view>
+
+    <view class="player-area">
+      <view class="player-summary">
+        <text class="area-label">你的手牌</text>
+        <text class="area-side">估分 {{playerScorePreview}} · 颜色奖励 {{gameState.players[0].callColorBonus}}</text>
+      </view>
+
+      <view class="hand-list">
+        <view class="card-item {{item.selected ? 'selected' : ''}}" wx:for="{{gameState.players[0].hand}}" wx:key="instanceId" data-index="{{index}}" bindtap="toggleHandCard">
+          <text class="card-name">{{item.name}}</text>
+          <text class="card-type">{{item.type}}</text>
+          <text class="card-score">{{item.score}} 分</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="temp-area" wx:if="{{gameState.tempDrawCards.length}}">
+      <text class="area-label">请选择保留 1 张</text>
+      <view class="temp-list">
+        <view class="temp-card" wx:for="{{gameState.tempDrawCards}}" wx:key="instanceId" data-index="{{index}}" bindtap="chooseTempCard">
+          <text class="card-name">{{item.name}}</text>
+          <text class="card-type">{{item.type}}</text>
+          <text class="card-score">{{item.score}} 分</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="pending-area" wx:if="{{gameState.pendingDiscardCard}}">
+      <text class="area-label">待弃牌</text>
+      <text class="pending-card-name">{{gameState.pendingDiscardCard.name}}</text>
+    </view>
+
+    <view class="pending-area" wx:if="{{canChooseCrabPile}}">
+      <text class="area-label">螃蟹 Duo 效果</text>
+      <text class="pending-card-name">从任意弃牌堆选择 1 张</text>
+      <view class="crab-piles">
+        <view class="crab-pile">
+          <text class="pile-title">弃牌堆 A</text>
+          <button class="small-card" wx:for="{{gameState.discardPileA}}" wx:key="instanceId" data-pile="A" data-index="{{index}}" bindtap="takeCrabEffectCard">{{item.name}}</button>
+          <text class="empty-pile" wx:if="{{!gameState.discardPileA.length}}">空</text>
+        </view>
+        <view class="crab-pile">
+          <text class="pile-title">弃牌堆 B</text>
+          <button class="small-card" wx:for="{{gameState.discardPileB}}" wx:key="instanceId" data-pile="B" data-index="{{index}}" bindtap="takeCrabEffectCard">{{item.name}}</button>
+          <text class="empty-pile" wx:if="{{!gameState.discardPileB.length}}">空</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="action-area">
+      <button class="action-button {{canAct ? '' : 'disabled'}}" disabled="{{!canAct}}" bindtap="playPair">打出 Duo</button>
+      <button class="action-button {{canCall ? '' : 'disabled'}}" disabled="{{!canCall}}" bindtap="stopRound">STOP</button>
+      <button class="action-button {{canCall ? '' : 'disabled'}}" disabled="{{!canCall}}" bindtap="callLastChance">LAST CHANCE</button>
+      <button class="action-button {{canAct ? '' : 'disabled'}}" disabled="{{!canAct}}" bindtap="endTurn">结束回合</button>
+    </view>
+
+    <view class="log-area">
+      <text class="area-label">最近操作</text>
+      <text class="log-item" wx:for="{{recentLogs}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+</view>

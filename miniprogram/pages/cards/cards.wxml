@@ -1,0 +1,25 @@
+<scroll-view class="page" scroll-y>
+  <view class="header">
+    <text class="title">牌库图鉴</text>
+    <text class="subtitle">当前测试卡牌一览</text>
+  </view>
+
+  <view class="card-list">
+    <view class="card-item" wx:for="{{cards}}" wx:key="id">
+      <view class="card-top">
+        <text class="card-name">{{item.name}}</text>
+        <text class="card-score">{{item.count}} 张</text>
+      </view>
+      <view class="card-meta">
+        <text class="meta-label">类型</text>
+        <text class="meta-value">{{item.type}}</text>
+      </view>
+      <view class="card-effect">
+        <text class="effect-label">效果</text>
+        <text class="effect-text">{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="home-button" bindtap="goHome">返回首页</button>
+</scroll-view>

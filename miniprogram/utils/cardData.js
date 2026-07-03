@@ -1,0 +1,132 @@
+const cards = [
+  {
+    id: 'crab',
+    name: '螃蟹',
+    type: 'Duo',
+    count: 9,
+    colors: ['darkBlue', 'darkBlue', 'lightBlue', 'black', 'black', 'yellow', 'green', 'purple', 'pink'],
+    effect: '打出一对螃蟹后，从任意弃牌堆拿 1 张牌。',
+    description: 'Duo 牌。每一对螃蟹价值 1 分，打出时触发拿弃牌效果。'
+  },
+  {
+    id: 'boat',
+    name: '船',
+    type: 'Duo',
+    count: 8,
+    colors: ['darkBlue', 'lightBlue', 'lightBlue', 'black', 'yellow', 'yellow', 'green', 'gray'],
+    effect: '打出一对船后，立刻再进行一个回合。',
+    description: 'Duo 牌。每一对船价值 1 分，打出时获得额外回合。'
+  },
+  {
+    id: 'fish',
+    name: '鱼',
+    type: 'Duo',
+    count: 7,
+    colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green', 'purple', 'lightOrange'],
+    effect: '打出一对鱼后，从牌堆顶摸 1 张牌。',
+    description: 'Duo 牌。每一对鱼价值 1 分，打出时补 1 张牌。'
+  },
+  {
+    id: 'shark',
+    name: '鲨鱼',
+    type: 'Duo',
+    count: 5,
+    colors: ['darkBlue', 'black', 'yellow', 'gray', 'orange'],
+    effect: '和游泳者一起打出后，随机偷取对手 1 张手牌。',
+    description: 'Duo 牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
+  },
+  {
+    id: 'swimmer',
+    name: '游泳者',
+    type: 'Duo',
+    count: 5,
+    colors: ['lightBlue', 'green', 'purple', 'gray', 'pink'],
+    effect: '和鲨鱼一起打出后，随机偷取对手 1 张手牌。',
+    description: 'Duo 牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
+  },
+  {
+    id: 'mermaid',
+    name: '美人鱼',
+    type: 'Mermaid',
+    count: 4,
+    colors: ['white', 'white', 'white', 'white'],
+    effect: '按你最多的颜色计分；多张美人鱼依次计算不同颜色。',
+    description: '美人鱼计颜色奖励。集齐 4 张美人鱼会立即获胜。'
+  },
+  {
+    id: 'shell',
+    name: '贝壳',
+    type: 'Collector',
+    count: 6,
+    colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green', 'gray'],
+    effect: '按数量计分：1/2/3/4/5/6 张为 0/2/4/6/8/10 分。',
+    description: '收集牌。数量越多，结算分越高。'
+  },
+  {
+    id: 'octopus',
+    name: '章鱼',
+    type: 'Collector',
+    count: 5,
+    colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green'],
+    effect: '按数量计分：1/2/3/4/5 张为 0/3/6/9/12 分。',
+    description: '收集牌。数量越多，结算分越高。'
+  },
+  {
+    id: 'penguin',
+    name: '企鹅',
+    type: 'Collector',
+    count: 3,
+    colors: ['darkBlue', 'lightBlue', 'black'],
+    effect: '按数量计分：1/2/3 张为 1/3/5 分。',
+    description: '收集牌。数量越多，结算分越高。'
+  },
+  {
+    id: 'sailor',
+    name: '水手',
+    type: 'Collector',
+    count: 2,
+    colors: ['yellow', 'green'],
+    effect: '按数量计分：1/2 张为 0/5 分。',
+    description: '收集牌。凑齐 2 张才有 5 分。'
+  },
+  {
+    id: 'lighthouse',
+    name: '灯塔',
+    type: 'Multiplier',
+    count: 1,
+    colors: ['lightOrange'],
+    effect: '每张船额外 1 分。',
+    description: '倍率牌。它本身不算船。'
+  },
+  {
+    id: 'shoal',
+    name: '鱼群',
+    type: 'Multiplier',
+    count: 1,
+    colors: ['purple'],
+    effect: '每张鱼额外 1 分。',
+    description: '倍率牌。它本身不算鱼。'
+  },
+  {
+    id: 'penguinColony',
+    name: '企鹅群',
+    type: 'Multiplier',
+    count: 1,
+    colors: ['gray'],
+    effect: '每张企鹅额外 2 分。',
+    description: '倍率牌。它本身不算企鹅。'
+  },
+  {
+    id: 'captain',
+    name: '船长',
+    type: 'Multiplier',
+    count: 1,
+    colors: ['pink'],
+    effect: '每张水手额外 3 分。',
+    description: '倍率牌。它本身不算水手。'
+  }
+]
+
+module.exports = {
+  cards
+}

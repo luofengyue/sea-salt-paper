@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="hero">
+    <text class="title">《海盐折纸》</text>
+    <text class="subtitle">轻量单机练习版</text>
+  </view>
+
+  <view class="actions">
+    <button class="action-button primary" bindtap="goToGame">和 AI 练习</button>
+    <button class="action-button" bindtap="goToRoom">创建好友房</button>
+    <button class="action-button" bindtap="showJoinRoomTip">加入房间</button>
+    <button class="action-button" bindtap="goToTutorial">规则教程</button>
+    <button class="action-button" bindtap="goToCards">牌库图鉴</button>
+  </view>
+</view>

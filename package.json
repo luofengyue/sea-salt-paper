@@ -1,0 +1,17 @@
+{
+  "name": "sea-salt-paper-miniprogram",
+  "version": "1.0.0",
+  "description": "A WeChat Mini Program prototype for a Sea Salt & Paper single-player practice game.",
+  "main": "index.js",
+  "scripts": {
+    "check": "node --check miniprogram/pages/game/game.js && node --check miniprogram/utils/gameUtils.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.2.1",
+    "miniprogram-ci": "^2.1.31"
+  }
+}
