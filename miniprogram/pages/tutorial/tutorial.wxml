@@ -6,7 +6,7 @@
 
   <view class="section">
     <text class="section-title">1. 游戏目标</text>
-    <text class="section-text">收集海洋折纸卡牌，通过手牌和打出的 Duo 组合得分。多轮累计到 40 分后比较总分，分数更高的一方获胜。</text>
+    <text class="section-text">收集海洋折纸卡牌，通过手牌和打出的组合得分。多轮累计到 40 分后比较总分，分数更高的一方获胜。</text>
   </view>
 
   <view class="section">
@@ -20,18 +20,18 @@
   </view>
 
   <view class="section">
-    <text class="section-title">4. 打出 Duo</text>
-    <text class="section-text">拿牌后可以打出 Duo：螃蟹+螃蟹、船+船、鱼+鱼、鲨鱼+游泳者。每个 Duo 价值 1 分，并触发对应效果。</text>
+    <text class="section-title">4. 打出组合</text>
+    <text class="section-text">拿牌后可以打出组合：螃蟹+螃蟹、船+船、鱼+鱼、鲨鱼+游泳者。每个组合价值 1 分，并触发对应效果。</text>
   </view>
 
   <view class="section">
-    <text class="section-title">5. STOP 和 LAST CHANCE</text>
-    <text class="section-text">当你的估分达到 7 分后，可以选择 STOP 直接结算；也可以选择 LAST CHANCE，让对手再进行最后一回合，然后按冒险规则结算。</text>
+    <text class="section-title">5. 立即停止和最后机会</text>
+    <text class="section-text">当你的估分达到 7 分后，可以选择立即停止直接结算；也可以选择最后机会，让对手再进行最后一回合，然后按冒险规则结算。</text>
   </view>
 
   <view class="section">
     <text class="section-title">6. 计分结算</text>
-    <text class="section-text">Duo、收集牌、倍率牌和美人鱼都会计分。LAST CHANCE 成功时，喊停方获得卡牌分和颜色奖励；失败时只得颜色奖励。</text>
+    <text class="section-text">组合牌、收集牌、倍率牌和美人鱼都会计分。最后机会成功时，喊停方获得卡牌分和颜色奖励；失败时只得颜色奖励。</text>
   </view>
 
   <button class="home-button" bindtap="goHome">返回首页</button>

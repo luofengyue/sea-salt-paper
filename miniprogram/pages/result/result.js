@@ -24,8 +24,8 @@ Page({
     const aiWin = ai.totalScore >= TARGET_SCORE && ai.totalScore > player.totalScore
     const isGameOver = playerWin || aiWin
     const modeTextMap = {
-      stop: 'STOP 正常结算',
-      lastChance: 'LAST CHANCE 结算',
+      stop: '立即停止正常结算',
+      lastChance: '最后机会结算',
       deckEmpty: '牌堆耗尽，本轮不计分',
       mermaidWin: '4 张美人鱼立即获胜'
     }
@@ -46,10 +46,10 @@ Page({
 
   getRoundEndReasonText(roundEndReason) {
     const reasonTextMap = {
-      playerStop: '你 STOP',
-      aiStop: 'AI STOP',
-      playerLastChance: '你 LAST CHANCE',
-      aiLastChance: 'AI LAST CHANCE',
+      playerStop: '你立即停止',
+      aiStop: 'AI 立即停止',
+      playerLastChance: '你最后机会',
+      aiLastChance: 'AI 最后机会',
       playerMermaid: '你集齐美人鱼',
       aiMermaid: 'AI 集齐美人鱼'
     }

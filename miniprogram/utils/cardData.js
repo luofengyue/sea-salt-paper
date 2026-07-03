@@ -2,47 +2,47 @@ const cards = [
   {
     id: 'crab',
     name: '螃蟹',
-    type: 'Duo',
+    type: '组合',
     count: 9,
     colors: ['darkBlue', 'darkBlue', 'lightBlue', 'black', 'black', 'yellow', 'green', 'purple', 'pink'],
     effect: '打出一对螃蟹后，从任意弃牌堆拿 1 张牌。',
-    description: 'Duo 牌。每一对螃蟹价值 1 分，打出时触发拿弃牌效果。'
+    description: '组合牌。每一对螃蟹价值 1 分，打出时触发拿弃牌效果。'
   },
   {
     id: 'boat',
     name: '船',
-    type: 'Duo',
+    type: '组合',
     count: 8,
     colors: ['darkBlue', 'lightBlue', 'lightBlue', 'black', 'yellow', 'yellow', 'green', 'gray'],
     effect: '打出一对船后，立刻再进行一个回合。',
-    description: 'Duo 牌。每一对船价值 1 分，打出时获得额外回合。'
+    description: '组合牌。每一对船价值 1 分，打出时获得额外回合。'
   },
   {
     id: 'fish',
     name: '鱼',
-    type: 'Duo',
+    type: '组合',
     count: 7,
     colors: ['darkBlue', 'lightBlue', 'black', 'yellow', 'green', 'purple', 'lightOrange'],
     effect: '打出一对鱼后，从牌堆顶摸 1 张牌。',
-    description: 'Duo 牌。每一对鱼价值 1 分，打出时补 1 张牌。'
+    description: '组合牌。每一对鱼价值 1 分，打出时补 1 张牌。'
   },
   {
     id: 'shark',
     name: '鲨鱼',
-    type: 'Duo',
+    type: '组合',
     count: 5,
     colors: ['darkBlue', 'black', 'yellow', 'gray', 'orange'],
     effect: '和游泳者一起打出后，随机偷取对手 1 张手牌。',
-    description: 'Duo 牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
+    description: '组合牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
   },
   {
     id: 'swimmer',
     name: '游泳者',
-    type: 'Duo',
+    type: '组合',
     count: 5,
     colors: ['lightBlue', 'green', 'purple', 'gray', 'pink'],
     effect: '和鲨鱼一起打出后，随机偷取对手 1 张手牌。',
-    description: 'Duo 牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
+    description: '组合牌。鲨鱼 + 游泳者价值 1 分，并触发偷牌效果。'
   },
   {
     id: 'mermaid',
