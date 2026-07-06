@@ -1,0 +1,501 @@
+.shape-icon {
+  position: relative;
+  z-index: 1;
+  width: 46rpx;
+  height: 46rpx;
+  color: inherit;
+}
+
+.icon-part {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+}
+
+.icon-main,
+.icon-accent,
+.icon-tail,
+.icon-extra-one,
+.icon-extra-two,
+.icon-extra-three {
+  background: currentColor;
+}
+
+.icon-eye-left,
+.icon-eye-right {
+  width: 5rpx;
+  height: 5rpx;
+  border-radius: 999rpx;
+  background: #174a63;
+}
+
+.icon-crab .icon-main {
+  left: 10rpx;
+  top: 18rpx;
+  width: 26rpx;
+  height: 17rpx;
+  border-radius: 18rpx;
+}
+
+.icon-crab .icon-eye-left {
+  left: 17rpx;
+  top: 16rpx;
+}
+
+.icon-crab .icon-eye-right {
+  right: 17rpx;
+  top: 16rpx;
+}
+
+.icon-crab .icon-extra-one,
+.icon-crab .icon-extra-two {
+  top: 12rpx;
+  width: 13rpx;
+  height: 13rpx;
+  border: 4rpx solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 999rpx;
+  background: transparent;
+}
+
+.icon-crab .icon-extra-one {
+  left: 0;
+  transform: rotate(-28deg);
+}
+
+.icon-crab .icon-extra-two {
+  right: 0;
+  transform: rotate(28deg);
+}
+
+.icon-crab .icon-tail,
+.icon-crab .icon-accent {
+  bottom: 7rpx;
+  width: 8rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+}
+
+.icon-crab .icon-tail {
+  left: 13rpx;
+}
+
+.icon-crab .icon-accent {
+  right: 13rpx;
+}
+
+.icon-boat .icon-main {
+  left: 7rpx;
+  bottom: 8rpx;
+  width: 32rpx;
+  height: 12rpx;
+  border-radius: 4rpx 4rpx 14rpx 14rpx;
+}
+
+.icon-boat .icon-accent {
+  left: 20rpx;
+  top: 6rpx;
+  width: 4rpx;
+  height: 28rpx;
+  border-radius: 999rpx;
+}
+
+.icon-boat .icon-tail {
+  left: 22rpx;
+  top: 7rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 24rpx 16rpx;
+  border-color: transparent transparent currentColor transparent;
+  background: transparent;
+}
+
+.icon-boat .icon-extra-one {
+  left: 8rpx;
+  top: 12rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18rpx 10rpx 0 0;
+  border-color: currentColor transparent transparent transparent;
+  background: transparent;
+  opacity: 0.7;
+}
+
+.icon-fish .icon-main,
+.icon-shark .icon-main {
+  left: 7rpx;
+  top: 15rpx;
+  width: 28rpx;
+  height: 17rpx;
+  border-radius: 60% 45% 45% 60%;
+}
+
+.icon-fish .icon-tail,
+.icon-shark .icon-tail {
+  right: 4rpx;
+  top: 16rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8rpx 0 8rpx 13rpx;
+  border-color: transparent transparent transparent currentColor;
+  background: transparent;
+}
+
+.icon-fish .icon-eye-left,
+.icon-shark .icon-eye-left {
+  left: 14rpx;
+  top: 19rpx;
+}
+
+.icon-fish .icon-accent {
+  left: 20rpx;
+  top: 22rpx;
+  width: 9rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.icon-shark .icon-main {
+  left: 5rpx;
+  width: 31rpx;
+  height: 15rpx;
+  border-radius: 70% 38% 38% 70%;
+}
+
+.icon-shark .icon-extra-one {
+  left: 18rpx;
+  top: 8rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7rpx 11rpx 7rpx;
+  border-color: transparent transparent currentColor transparent;
+  background: transparent;
+}
+
+.icon-shark .icon-eye-left {
+  left: 12rpx;
+}
+
+.icon-swimmer .icon-main {
+  left: 17rpx;
+  top: 7rpx;
+  width: 13rpx;
+  height: 13rpx;
+  border-radius: 999rpx;
+}
+
+.icon-swimmer .icon-accent,
+.icon-swimmer .icon-tail,
+.icon-swimmer .icon-extra-one {
+  left: 7rpx;
+  width: 32rpx;
+  height: 8rpx;
+  border: 3rpx solid currentColor;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 0 0 999rpx 999rpx;
+  background: transparent;
+}
+
+.icon-swimmer .icon-accent {
+  top: 20rpx;
+}
+
+.icon-swimmer .icon-tail {
+  top: 29rpx;
+  opacity: 0.7;
+}
+
+.icon-swimmer .icon-extra-one {
+  top: 36rpx;
+  opacity: 0.45;
+}
+
+.icon-mermaid .icon-main {
+  left: 18rpx;
+  top: 6rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 999rpx;
+}
+
+.icon-mermaid .icon-accent {
+  left: 16rpx;
+  top: 18rpx;
+  width: 16rpx;
+  height: 18rpx;
+  border-radius: 10rpx 10rpx 14rpx 14rpx;
+}
+
+.icon-mermaid .icon-tail,
+.icon-mermaid .icon-extra-one {
+  bottom: 5rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: transparent;
+}
+
+.icon-mermaid .icon-tail {
+  left: 11rpx;
+  border-width: 0 9rpx 13rpx 0;
+  border-color: transparent currentColor transparent transparent;
+  transform: rotate(-14deg);
+}
+
+.icon-mermaid .icon-extra-one {
+  right: 10rpx;
+  border-width: 0 0 13rpx 9rpx;
+  border-color: transparent transparent transparent currentColor;
+  transform: rotate(14deg);
+}
+
+.icon-shell .icon-main {
+  left: 8rpx;
+  top: 12rpx;
+  width: 30rpx;
+  height: 26rpx;
+  border-radius: 999rpx 999rpx 12rpx 12rpx;
+}
+
+.icon-shell .icon-accent,
+.icon-shell .icon-tail,
+.icon-shell .icon-extra-one {
+  top: 17rpx;
+  width: 4rpx;
+  height: 18rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.icon-shell .icon-accent {
+  left: 16rpx;
+  transform: rotate(-18deg);
+}
+
+.icon-shell .icon-tail {
+  left: 22rpx;
+}
+
+.icon-shell .icon-extra-one {
+  right: 16rpx;
+  transform: rotate(18deg);
+}
+
+.icon-octopus .icon-main {
+  left: 10rpx;
+  top: 9rpx;
+  width: 26rpx;
+  height: 24rpx;
+  border-radius: 999rpx 999rpx 16rpx 16rpx;
+}
+
+.icon-octopus .icon-eye-left {
+  left: 18rpx;
+  top: 18rpx;
+}
+
+.icon-octopus .icon-eye-right {
+  right: 18rpx;
+  top: 18rpx;
+}
+
+.icon-octopus .icon-accent,
+.icon-octopus .icon-tail,
+.icon-octopus .icon-extra-one,
+.icon-octopus .icon-extra-two {
+  bottom: 7rpx;
+  width: 7rpx;
+  height: 12rpx;
+  border-radius: 999rpx;
+}
+
+.icon-octopus .icon-accent {
+  left: 9rpx;
+}
+
+.icon-octopus .icon-tail {
+  left: 18rpx;
+}
+
+.icon-octopus .icon-extra-one {
+  right: 18rpx;
+}
+
+.icon-octopus .icon-extra-two {
+  right: 9rpx;
+}
+
+.icon-penguin .icon-main,
+.icon-penguin-colony .icon-main,
+.icon-penguin-colony .icon-accent,
+.icon-penguin-colony .icon-tail {
+  border-radius: 999rpx;
+}
+
+.icon-penguin .icon-main {
+  left: 12rpx;
+  top: 7rpx;
+  width: 22rpx;
+  height: 32rpx;
+}
+
+.icon-penguin .icon-accent {
+  left: 17rpx;
+  top: 17rpx;
+  width: 12rpx;
+  height: 17rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.icon-penguin .icon-eye-left {
+  left: 18rpx;
+  top: 14rpx;
+}
+
+.icon-penguin .icon-eye-right {
+  right: 18rpx;
+  top: 14rpx;
+}
+
+.icon-penguin .icon-tail {
+  left: 19rpx;
+  bottom: 4rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6rpx 5rpx 0 5rpx;
+  border-color: #f2c94c transparent transparent transparent;
+  background: transparent;
+}
+
+.icon-sailor .icon-main,
+.icon-captain .icon-main {
+  left: 15rpx;
+  top: 16rpx;
+  width: 16rpx;
+  height: 17rpx;
+  border-radius: 999rpx;
+}
+
+.icon-sailor .icon-accent,
+.icon-captain .icon-accent {
+  left: 11rpx;
+  top: 9rpx;
+  width: 24rpx;
+  height: 10rpx;
+  border-radius: 5rpx 5rpx 10rpx 10rpx;
+}
+
+.icon-sailor .icon-tail,
+.icon-captain .icon-tail {
+  left: 18rpx;
+  top: 4rpx;
+  width: 10rpx;
+  height: 8rpx;
+  border-radius: 6rpx 6rpx 0 0;
+}
+
+.icon-lighthouse .icon-main {
+  left: 16rpx;
+  top: 13rpx;
+  width: 15rpx;
+  height: 27rpx;
+  border-radius: 4rpx 4rpx 8rpx 8rpx;
+}
+
+.icon-lighthouse .icon-accent {
+  left: 12rpx;
+  top: 8rpx;
+  width: 23rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.icon-lighthouse .icon-tail {
+  left: 19rpx;
+  top: 3rpx;
+  width: 9rpx;
+  height: 7rpx;
+  border-radius: 4rpx 4rpx 0 0;
+}
+
+.icon-lighthouse .icon-extra-one,
+.icon-lighthouse .icon-extra-two {
+  left: 16rpx;
+  width: 15rpx;
+  height: 4rpx;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.icon-lighthouse .icon-extra-one {
+  top: 21rpx;
+}
+
+.icon-lighthouse .icon-extra-two {
+  top: 31rpx;
+}
+
+.icon-shoal .icon-main,
+.icon-shoal .icon-accent,
+.icon-shoal .icon-tail {
+  width: 17rpx;
+  height: 10rpx;
+  border-radius: 999rpx 8rpx 8rpx 999rpx;
+}
+
+.icon-shoal .icon-main {
+  left: 7rpx;
+  top: 12rpx;
+}
+
+.icon-shoal .icon-accent {
+  right: 7rpx;
+  top: 20rpx;
+  opacity: 0.75;
+}
+
+.icon-shoal .icon-tail {
+  left: 13rpx;
+  bottom: 8rpx;
+  opacity: 0.55;
+}
+
+.icon-penguin-colony .icon-main {
+  left: 15rpx;
+  top: 8rpx;
+  width: 17rpx;
+  height: 26rpx;
+}
+
+.icon-penguin-colony .icon-accent,
+.icon-penguin-colony .icon-tail {
+  top: 17rpx;
+  width: 13rpx;
+  height: 20rpx;
+  opacity: 0.78;
+}
+
+.icon-penguin-colony .icon-accent {
+  left: 5rpx;
+}
+
+.icon-penguin-colony .icon-tail {
+  right: 5rpx;
+}
+
+.icon-captain .icon-extra-one {
+  left: 20rpx;
+  top: 11rpx;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 999rpx;
+  background: #fff7cf;
+}

@@ -1,3 +1,5 @@
+@import "../../styles/cardIcons.wxss";
+
 .page {
   height: 100vh;
   padding: 48rpx 32rpx 64rpx;
@@ -98,12 +100,8 @@
   background: rgba(255, 255, 255, 0.72);
 }
 
-.card-art .shape-symbol {
-  position: relative;
-  z-index: 1;
-  font-size: 58rpx;
-  font-weight: 700;
-  line-height: 1;
+.card-art .shape-icon {
+  transform: scale(1.45);
 }
 
 .art-name {

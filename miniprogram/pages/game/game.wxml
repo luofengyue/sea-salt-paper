@@ -21,6 +21,20 @@
       <view class="pile-card {{canTakeDiscardA || canChooseDiscardPile ? 'pile-clickable' : ''}} {{canChooseDiscardPile ? 'pile-target' : ''}}" data-pile="A" bindtap="handleDiscardPileTap" hover-class="pile-press">
         <view class="paper-corner"></view>
         <text class="pile-title">弃牌堆 A</text>
+        <view class="pile-shape card-shape shape-{{discardPileATop.shape}}" wx:if="{{discardPileATop}}">
+          <view class="shape-fold"></view>
+          <view class="shape-dot"></view>
+          <view class="shape-icon icon-{{discardPileATop.shape}}">
+            <view class="icon-part icon-main"></view>
+            <view class="icon-part icon-accent"></view>
+            <view class="icon-part icon-tail"></view>
+            <view class="icon-part icon-eye-left"></view>
+            <view class="icon-part icon-eye-right"></view>
+            <view class="icon-part icon-extra-one"></view>
+            <view class="icon-part icon-extra-two"></view>
+            <view class="icon-part icon-extra-three"></view>
+          </view>
+        </view>
         <text class="pile-value">{{discardPileATopName}}</text>
         <text class="pile-mark">A</text>
       </view>
@@ -36,6 +50,20 @@
       <view class="pile-card {{canTakeDiscardB || canChooseDiscardPile ? 'pile-clickable' : ''}} {{canChooseDiscardPile ? 'pile-target' : ''}}" data-pile="B" bindtap="handleDiscardPileTap" hover-class="pile-press">
         <view class="paper-corner"></view>
         <text class="pile-title">弃牌堆 B</text>
+        <view class="pile-shape card-shape shape-{{discardPileBTop.shape}}" wx:if="{{discardPileBTop}}">
+          <view class="shape-fold"></view>
+          <view class="shape-dot"></view>
+          <view class="shape-icon icon-{{discardPileBTop.shape}}">
+            <view class="icon-part icon-main"></view>
+            <view class="icon-part icon-accent"></view>
+            <view class="icon-part icon-tail"></view>
+            <view class="icon-part icon-eye-left"></view>
+            <view class="icon-part icon-eye-right"></view>
+            <view class="icon-part icon-extra-one"></view>
+            <view class="icon-part icon-extra-two"></view>
+            <view class="icon-part icon-extra-three"></view>
+          </view>
+        </view>
         <text class="pile-value">{{discardPileBTopName}}</text>
         <text class="pile-mark">B</text>
       </view>
@@ -52,7 +80,16 @@
           <view class="card-shape shape-{{item.shape}}">
             <view class="shape-fold"></view>
             <view class="shape-dot"></view>
-            <text class="shape-symbol">{{item.shapeSymbol}}</text>
+            <view class="shape-icon icon-{{item.shape}}">
+              <view class="icon-part icon-main"></view>
+              <view class="icon-part icon-accent"></view>
+              <view class="icon-part icon-tail"></view>
+              <view class="icon-part icon-eye-left"></view>
+              <view class="icon-part icon-eye-right"></view>
+              <view class="icon-part icon-extra-one"></view>
+              <view class="icon-part icon-extra-two"></view>
+              <view class="icon-part icon-extra-three"></view>
+            </view>
           </view>
           <view class="card-copy">
             <text class="card-name">{{item.name}}</text>
@@ -69,7 +106,16 @@
           <view class="card-shape shape-{{item.shape}}">
             <view class="shape-fold"></view>
             <view class="shape-dot"></view>
-            <text class="shape-symbol">{{item.shapeSymbol}}</text>
+            <view class="shape-icon icon-{{item.shape}}">
+              <view class="icon-part icon-main"></view>
+              <view class="icon-part icon-accent"></view>
+              <view class="icon-part icon-tail"></view>
+              <view class="icon-part icon-eye-left"></view>
+              <view class="icon-part icon-eye-right"></view>
+              <view class="icon-part icon-extra-one"></view>
+              <view class="icon-part icon-extra-two"></view>
+              <view class="icon-part icon-extra-three"></view>
+            </view>
           </view>
           <view class="card-copy">
             <text class="card-name">{{item.name}}</text>

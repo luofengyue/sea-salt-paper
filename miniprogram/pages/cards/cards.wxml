@@ -11,7 +11,16 @@
         <view class="shape-soft"></view>
         <view class="shape-fold"></view>
         <view class="shape-dot"></view>
-        <text class="shape-symbol">{{item.shapeSymbol}}</text>
+        <view class="shape-icon icon-{{item.shape}}">
+          <view class="icon-part icon-main"></view>
+          <view class="icon-part icon-accent"></view>
+          <view class="icon-part icon-tail"></view>
+          <view class="icon-part icon-eye-left"></view>
+          <view class="icon-part icon-eye-right"></view>
+          <view class="icon-part icon-extra-one"></view>
+          <view class="icon-part icon-extra-two"></view>
+          <view class="icon-part icon-extra-three"></view>
+        </view>
         <text class="art-name">{{item.name}}</text>
       </view>
       <view class="card-top">
