@@ -49,8 +49,15 @@
 
       <view class="hand-list">
         <view class="card-item {{item.selected ? 'selected' : ''}}" wx:for="{{gameState.players[0].hand}}" wx:key="instanceId" data-index="{{index}}" bindtap="toggleHandCard">
-          <text class="card-name">{{item.name}}</text>
-          <text class="card-type">{{item.type}}</text>
+          <view class="card-shape shape-{{item.shape}}">
+            <view class="shape-fold"></view>
+            <view class="shape-dot"></view>
+            <text class="shape-symbol">{{item.shapeSymbol}}</text>
+          </view>
+          <view class="card-copy">
+            <text class="card-name">{{item.name}}</text>
+            <text class="card-type">{{item.type}}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -59,8 +66,15 @@
       <text class="area-label">请选择保留 1 张</text>
       <view class="temp-list">
         <view class="temp-card" wx:for="{{gameState.tempDrawCards}}" wx:key="instanceId" data-index="{{index}}" bindtap="chooseTempCard">
-          <text class="card-name">{{item.name}}</text>
-          <text class="card-type">{{item.type}}</text>
+          <view class="card-shape shape-{{item.shape}}">
+            <view class="shape-fold"></view>
+            <view class="shape-dot"></view>
+            <text class="shape-symbol">{{item.shapeSymbol}}</text>
+          </view>
+          <view class="card-copy">
+            <text class="card-name">{{item.name}}</text>
+            <text class="card-type">{{item.type}}</text>
+          </view>
         </view>
       </view>
     </view>

@@ -7,10 +7,11 @@
 
   <view class="card-list">
     <view class="card-item" wx:for="{{cards}}" wx:key="id">
-      <view class="card-art">
-        <view class="art-fold fold-main"></view>
-        <view class="art-fold fold-light"></view>
-        <view class="art-fold fold-coral"></view>
+      <view class="card-art shape-{{item.shape}}">
+        <view class="shape-soft"></view>
+        <view class="shape-fold"></view>
+        <view class="shape-dot"></view>
+        <text class="shape-symbol">{{item.shapeSymbol}}</text>
         <text class="art-name">{{item.name}}</text>
       </view>
       <view class="card-top">

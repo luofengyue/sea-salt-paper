@@ -282,18 +282,70 @@
 .card-item,
 .temp-card {
   min-height: 154rpx;
-  padding: 20rpx;
+  padding: 18rpx;
   border: 4rpx solid #ffffff;
-  border-radius: 16rpx;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbf6 100%);
+  border-radius: 22rpx;
+  background: linear-gradient(180deg, #fffdf8 0%, #f6fbf8 100%);
   box-sizing: border-box;
   box-shadow: 0 12rpx 26rpx rgba(23, 74, 99, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
 }
 
 .card-item.selected {
-  background: #eefaf9;
-  border-color: #2f8ebc;
+  background: #fff8ed;
+  border-color: #f2c94c;
   transform: translateY(-6rpx);
+}
+
+.card-shape {
+  width: 66rpx;
+  height: 66rpx;
+  flex-shrink: 0;
+  border-radius: 24rpx;
+  background: #bee9e8;
+  color: #174a63;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -7rpx 0 rgba(23, 74, 99, 0.06);
+}
+
+.shape-fold {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 8rpx 8rpx 8rpx 2rpx;
+  background: rgba(255, 255, 255, 0.52);
+  transform: rotate(12deg);
+}
+
+.shape-dot {
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.shape-symbol {
+  position: relative;
+  z-index: 1;
+  font-size: 31rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-copy {
+  min-width: 0;
+  flex: 1;
 }
 
 .card-name {
@@ -310,12 +362,97 @@
   margin-top: 12rpx;
   padding: 5rpx 12rpx;
   border-radius: 999rpx;
-  background: #bee9e8;
+  background: rgba(190, 233, 232, 0.72);
   color: #174a63;
   font-size: 21rpx;
+  font-weight: 600;
   line-height: 1.3;
   text-align: center;
   box-sizing: border-box;
+}
+
+.shape-crab {
+  border-radius: 28rpx 28rpx 20rpx 20rpx;
+  background: #ffd8d2;
+  color: #b84a3d;
+}
+
+.shape-boat {
+  border-radius: 12rpx 30rpx 18rpx 30rpx;
+  background: #d8f1f5;
+  color: #2f8ebc;
+}
+
+.shape-fish {
+  border-radius: 32rpx 18rpx 32rpx 18rpx;
+  background: #d8efe5;
+  color: #377f70;
+}
+
+.shape-shark {
+  border-radius: 16rpx 34rpx 16rpx 34rpx;
+  background: #dce6f5;
+  color: #506b91;
+}
+
+.shape-swimmer {
+  border-radius: 999rpx;
+  background: #d6edf9;
+  color: #2f8ebc;
+}
+
+.shape-mermaid {
+  border-radius: 34rpx 12rpx 34rpx 12rpx;
+  background: #eadff6;
+  color: #7b61a8;
+}
+
+.shape-shell {
+  border-radius: 34rpx 34rpx 14rpx 14rpx;
+  background: #ffe2bd;
+  color: #b37332;
+}
+
+.shape-octopus {
+  border-radius: 999rpx 999rpx 24rpx 24rpx;
+  background: #f8d7e6;
+  color: #aa5279;
+}
+
+.shape-penguin {
+  border-radius: 999rpx;
+  background: #e2edf0;
+  color: #174a63;
+}
+
+.shape-sailor {
+  border-radius: 18rpx;
+  background: #d7e7ff;
+  color: #3d6fa9;
+}
+
+.shape-lighthouse {
+  border-radius: 12rpx 12rpx 28rpx 28rpx;
+  background: #ffe4dc;
+  color: #c75d4d;
+}
+
+.shape-shoal {
+  border-radius: 26rpx 16rpx 26rpx 16rpx;
+  background: #d7f2ee;
+  color: #2f8a80;
+}
+
+.shape-penguin-colony {
+  border-radius: 999rpx;
+  background: #e5edf5;
+  color: #31546b;
+}
+
+.shape-captain {
+  border-radius: 16rpx 30rpx 16rpx 30rpx;
+  background: #fff0ba;
+  color: #946b18;
 }
 
 .temp-list,

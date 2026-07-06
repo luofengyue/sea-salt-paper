@@ -48,47 +48,62 @@
   min-height: 430rpx;
   padding: 14rpx;
   border: 4rpx solid #ffffff;
-  border-radius: 18rpx;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbf6 100%);
+  border-radius: 22rpx;
+  background: linear-gradient(180deg, #fffdf8 0%, #f7fbf6 100%);
   box-sizing: border-box;
-  box-shadow: 0 14rpx 30rpx rgba(23, 74, 99, 0.09);
+  box-shadow: 0 14rpx 30rpx rgba(23, 74, 99, 0.08);
 }
 
 .card-art {
   height: 168rpx;
   position: relative;
   margin-bottom: 16rpx;
-  border-radius: 14rpx;
-  background: #174a63;
+  border-radius: 20rpx;
+  background: #bee9e8;
+  color: #174a63;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -10rpx 0 rgba(23, 74, 99, 0.05);
 }
 
-.art-fold {
+.shape-soft {
   position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 42rpx;
+  background: rgba(255, 255, 255, 0.62);
+  transform: rotate(-8deg);
 }
 
-.fold-main {
-  left: 20rpx;
-  top: 24rpx;
-  border-width: 0 82rpx 102rpx 0;
-  border-color: transparent #2f8ebc transparent transparent;
+.shape-fold {
+  position: absolute;
+  top: 26rpx;
+  right: 34rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 12rpx 12rpx 12rpx 2rpx;
+  background: rgba(255, 255, 255, 0.56);
+  transform: rotate(12deg);
 }
 
-.fold-light {
-  right: 18rpx;
-  top: 24rpx;
-  border-width: 102rpx 0 0 82rpx;
-  border-color: transparent transparent transparent #bee9e8;
+.shape-dot {
+  position: absolute;
+  left: 42rpx;
+  top: 46rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
 }
 
-.fold-coral {
-  left: 82rpx;
-  top: 74rpx;
-  border-width: 0 36rpx 48rpx 36rpx;
-  border-color: transparent transparent #f26d5b transparent;
+.card-art .shape-symbol {
+  position: relative;
+  z-index: 1;
+  font-size: 58rpx;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .art-name {
@@ -99,6 +114,90 @@
   font-size: 28rpx;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.card-art.shape-crab {
+  border-radius: 30rpx 30rpx 18rpx 18rpx;
+  background: #ffd8d2;
+  color: #b84a3d;
+}
+
+.card-art.shape-boat {
+  border-radius: 14rpx 34rpx 20rpx 34rpx;
+  background: #d8f1f5;
+  color: #2f8ebc;
+}
+
+.card-art.shape-fish {
+  border-radius: 36rpx 18rpx 36rpx 18rpx;
+  background: #d8efe5;
+  color: #377f70;
+}
+
+.card-art.shape-shark {
+  border-radius: 18rpx 38rpx 18rpx 38rpx;
+  background: #dce6f5;
+  color: #506b91;
+}
+
+.card-art.shape-swimmer {
+  border-radius: 999rpx;
+  background: #d6edf9;
+  color: #2f8ebc;
+}
+
+.card-art.shape-mermaid {
+  border-radius: 38rpx 14rpx 38rpx 14rpx;
+  background: #eadff6;
+  color: #7b61a8;
+}
+
+.card-art.shape-shell {
+  border-radius: 38rpx 38rpx 16rpx 16rpx;
+  background: #ffe2bd;
+  color: #b37332;
+}
+
+.card-art.shape-octopus {
+  border-radius: 999rpx 999rpx 26rpx 26rpx;
+  background: #f8d7e6;
+  color: #aa5279;
+}
+
+.card-art.shape-penguin {
+  border-radius: 999rpx;
+  background: #e2edf0;
+  color: #174a63;
+}
+
+.card-art.shape-sailor {
+  border-radius: 20rpx;
+  background: #d7e7ff;
+  color: #3d6fa9;
+}
+
+.card-art.shape-lighthouse {
+  border-radius: 14rpx 14rpx 32rpx 32rpx;
+  background: #ffe4dc;
+  color: #c75d4d;
+}
+
+.card-art.shape-shoal {
+  border-radius: 30rpx 16rpx 30rpx 16rpx;
+  background: #d7f2ee;
+  color: #2f8a80;
+}
+
+.card-art.shape-penguin-colony {
+  border-radius: 999rpx;
+  background: #e5edf5;
+  color: #31546b;
+}
+
+.card-art.shape-captain {
+  border-radius: 18rpx 34rpx 18rpx 34rpx;
+  background: #fff0ba;
+  color: #946b18;
 }
 
 .card-top {
