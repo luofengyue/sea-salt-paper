@@ -34,7 +34,7 @@
   </view>
 
   <view class="actions">
-    <button class="action-button primary" bindtap="goToGame" hover-class="button-press">
+    <button class="action-button" bindtap="goToGame" hover-class="button-press">
       <text class="button-icon">AI</text>
       <text class="button-label">和 AI 练习</text>
       <text class="button-arrow">›</text>

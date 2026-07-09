@@ -11,7 +11,9 @@
         <view class="shape-soft"></view>
         <view class="shape-fold"></view>
         <view class="shape-dot"></view>
-        <view class="shape-icon icon-{{item.shape}}">
+        <text class="combo-hint" wx:if="{{item.comboHint}}">{{item.comboHint}}</text>
+        <image class="card-icon-image" src="{{item.icon}}" mode="aspectFit" wx:if="{{item.icon}}"></image>
+        <view class="shape-icon icon-{{item.shape}}" wx:else>
           <view class="icon-part icon-main"></view>
           <view class="icon-part icon-accent"></view>
           <view class="icon-part icon-tail"></view>

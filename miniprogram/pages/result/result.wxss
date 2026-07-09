@@ -177,3 +177,62 @@
   opacity: 0.86;
   transform: scale(0.99);
 }
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 48%, #f8fdff 100%);
+}
+
+.kicker,
+.winner,
+.score-value {
+  color: #3f8fbb;
+}
+
+.title,
+.section-title,
+.total-score {
+  color: #24485f;
+}
+
+.result-card,
+.total-card {
+  border-color: rgba(106, 174, 216, 0.14);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12rpx 30rpx rgba(80, 150, 190, 0.12);
+}
+
+.score-row {
+  border-bottom-color: rgba(106, 174, 216, 0.14);
+}
+
+.score-badge {
+  background: #6eb9df;
+}
+
+.score-badge.ai {
+  background: #b9dcff;
+  color: #24485f;
+}
+
+.score-name,
+.score-note {
+  color: #31586f;
+}
+
+.score-detail {
+  background: #f1faff;
+}
+
+.action-button {
+  color: #24485f;
+  box-shadow: 0 12rpx 28rpx rgba(80, 150, 190, 0.12);
+}
+
+.action-button.primary {
+  background: #8fd3f4;
+  color: #ffffff;
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}

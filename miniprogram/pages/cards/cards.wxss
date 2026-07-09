@@ -104,6 +104,36 @@
   transform: scale(1.45);
 }
 
+.card-art .card-icon-image {
+  position: relative;
+  z-index: 1;
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+}
+
+.combo-hint {
+  position: absolute;
+  left: 14rpx;
+  top: 14rpx;
+  z-index: 3;
+  min-width: 56rpx;
+  max-width: 92rpx;
+  height: 34rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.9);
+  color: #24485f;
+  font-size: 20rpx;
+  font-weight: 800;
+  line-height: 34rpx;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 5rpx 12rpx rgba(80, 150, 190, 0.16);
+}
+
 .art-name {
   position: absolute;
   left: 18rpx;
@@ -290,4 +320,83 @@
 .button-press {
   opacity: 0.86;
   transform: scale(0.99);
+}
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 48%, #f8fdff 100%);
+}
+
+.kicker {
+  color: #3f8fbb;
+}
+
+.title,
+.card-name {
+  color: #24485f;
+}
+
+.subtitle,
+.meta-label,
+.effect-label {
+  color: #5f8196;
+}
+
+.card-item {
+  background: linear-gradient(180deg, #ffffff 0%, #f1faff 100%);
+  box-shadow: 0 14rpx 30rpx rgba(80, 150, 190, 0.12);
+}
+
+.card-art,
+.card-score,
+.meta-value {
+  background: #d8f3ff;
+  color: #24485f;
+}
+
+.card-effect {
+  background: #f1faff;
+}
+
+.effect-text,
+.meta-value {
+  color: #31586f;
+}
+
+.home-button {
+  background: #8fd3f4;
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}
+
+.card-art.shape-crab,
+.card-art.shape-boat,
+.card-art.shape-fish,
+.card-art.shape-shark,
+.card-art.shape-swimmer,
+.card-art.shape-mermaid,
+.card-art.shape-shell,
+.card-art.shape-octopus,
+.card-art.shape-penguin,
+.card-art.shape-sailor,
+.card-art.shape-lighthouse,
+.card-art.shape-shoal,
+.card-art.shape-penguin-colony,
+.card-art.shape-captain {
+  background: #d8f3ff;
+  color: #347fae;
+}
+
+.card-art.shape-shark,
+.card-art.shape-penguin,
+.card-art.shape-penguin-colony {
+  background: #dbeeff;
+  color: #3c6797;
+}
+
+.card-art.shape-shell,
+.card-art.shape-captain {
+  background: #e8f6ff;
+  color: #3f8fbb;
 }

@@ -243,8 +243,8 @@
 }
 
 .pile-shape {
-  width: 54rpx;
-  height: 54rpx;
+  width: 64rpx;
+  height: 64rpx;
   margin: 12rpx auto 0;
   border-radius: 18rpx;
 }
@@ -255,6 +255,11 @@
 
 .pile-shape .shape-icon {
   transform: scale(0.82);
+}
+
+.pile-shape .card-icon-image {
+  width: 58rpx;
+  height: 58rpx;
 }
 
 .pile-shape .shape-fold {
@@ -311,8 +316,8 @@
 
 .card-item,
 .temp-card {
-  min-height: 154rpx;
-  padding: 18rpx;
+  min-height: 166rpx;
+  padding: 18rpx 16rpx;
   border: 4rpx solid #ffffff;
   border-radius: 22rpx;
   background: linear-gradient(180deg, #fffdf8 0%, #f6fbf8 100%);
@@ -330,10 +335,10 @@
 }
 
 .card-shape {
-  width: 66rpx;
-  height: 66rpx;
+  width: 84rpx;
+  height: 84rpx;
   flex-shrink: 0;
-  border-radius: 24rpx;
+  border-radius: 28rpx;
   background: #bee9e8;
   color: #174a63;
   position: relative;
@@ -376,9 +381,50 @@
 .shape-icon {
   position: relative;
   z-index: 1;
-  width: 46rpx;
-  height: 46rpx;
+  width: 58rpx;
+  height: 58rpx;
   color: inherit;
+}
+
+.card-icon-image {
+  position: relative;
+  z-index: 1;
+  width: 76rpx;
+  height: 76rpx;
+  display: block;
+}
+
+.combo-hint {
+  position: absolute;
+  left: 4rpx;
+  top: 4rpx;
+  z-index: 3;
+  min-width: 34rpx;
+  max-width: 56rpx;
+  height: 24rpx;
+  padding: 0 6rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.9);
+  color: #24485f;
+  font-size: 16rpx;
+  font-weight: 800;
+  line-height: 24rpx;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 3rpx 8rpx rgba(80, 150, 190, 0.14);
+}
+
+.pile-shape .combo-hint {
+  left: 3rpx;
+  top: 3rpx;
+  min-width: 34rpx;
+  max-width: 54rpx;
+  height: 22rpx;
+  padding: 0 5rpx;
+  font-size: 15rpx;
+  line-height: 22rpx;
 }
 
 .icon-part {
@@ -405,58 +451,70 @@
 }
 
 .icon-crab .icon-main {
-  left: 10rpx;
+  left: 9rpx;
   top: 18rpx;
-  width: 26rpx;
-  height: 17rpx;
-  border-radius: 18rpx;
+  width: 28rpx;
+  height: 18rpx;
+  border-radius: 18rpx 18rpx 14rpx 14rpx;
 }
 
 .icon-crab .icon-eye-left {
-  left: 17rpx;
-  top: 16rpx;
+  left: 16rpx;
+  top: 14rpx;
 }
 
 .icon-crab .icon-eye-right {
-  right: 17rpx;
-  top: 16rpx;
+  right: 16rpx;
+  top: 14rpx;
 }
 
 .icon-crab .icon-extra-one,
 .icon-crab .icon-extra-two {
-  top: 12rpx;
-  width: 13rpx;
-  height: 13rpx;
-  border: 4rpx solid currentColor;
+  top: 10rpx;
+  width: 15rpx;
+  height: 15rpx;
+  border: 5rpx solid currentColor;
   border-bottom-color: transparent;
+  border-left-color: currentColor;
   border-radius: 999rpx;
   background: transparent;
 }
 
 .icon-crab .icon-extra-one {
-  left: 0;
-  transform: rotate(-28deg);
+  left: -1rpx;
+  transform: rotate(-34deg);
 }
 
 .icon-crab .icon-extra-two {
-  right: 0;
-  transform: rotate(28deg);
+  right: -1rpx;
+  transform: rotate(34deg);
 }
 
 .icon-crab .icon-tail,
 .icon-crab .icon-accent {
-  bottom: 7rpx;
-  width: 8rpx;
+  bottom: 6rpx;
+  width: 10rpx;
   height: 4rpx;
   border-radius: 999rpx;
 }
 
 .icon-crab .icon-tail {
-  left: 13rpx;
+  left: 10rpx;
+  transform: rotate(18deg);
 }
 
 .icon-crab .icon-accent {
-  right: 13rpx;
+  right: 10rpx;
+  transform: rotate(-18deg);
+}
+
+.icon-crab .icon-extra-three {
+  left: 20rpx;
+  top: 27rpx;
+  width: 7rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .icon-boat .icon-main {
@@ -632,19 +690,19 @@
 }
 
 .icon-shell .icon-main {
-  left: 8rpx;
-  top: 12rpx;
-  width: 30rpx;
-  height: 26rpx;
-  border-radius: 999rpx 999rpx 12rpx 12rpx;
+  left: 7rpx;
+  top: 11rpx;
+  width: 32rpx;
+  height: 28rpx;
+  border-radius: 999rpx 999rpx 10rpx 10rpx;
 }
 
 .icon-shell .icon-accent,
 .icon-shell .icon-tail,
 .icon-shell .icon-extra-one {
-  top: 17rpx;
+  top: 16rpx;
   width: 4rpx;
-  height: 18rpx;
+  height: 21rpx;
   border-radius: 999rpx;
   background: rgba(255, 255, 255, 0.68);
 }
@@ -661,6 +719,23 @@
 .icon-shell .icon-extra-one {
   right: 16rpx;
   transform: rotate(18deg);
+}
+
+.icon-shell .icon-extra-two,
+.icon-shell .icon-extra-three {
+  bottom: 8rpx;
+  width: 10rpx;
+  height: 7rpx;
+  border-radius: 999rpx 999rpx 4rpx 4rpx;
+  background: currentColor;
+}
+
+.icon-shell .icon-extra-two {
+  left: 8rpx;
+}
+
+.icon-shell .icon-extra-three {
+  right: 8rpx;
 }
 
 .icon-octopus .icon-main {
@@ -821,25 +896,53 @@
 .icon-shoal .icon-main,
 .icon-shoal .icon-accent,
 .icon-shoal .icon-tail {
-  width: 17rpx;
-  height: 10rpx;
+  width: 15rpx;
+  height: 9rpx;
   border-radius: 999rpx 8rpx 8rpx 999rpx;
 }
 
 .icon-shoal .icon-main {
-  left: 7rpx;
-  top: 12rpx;
+  left: 6rpx;
+  top: 11rpx;
 }
 
 .icon-shoal .icon-accent {
-  right: 7rpx;
+  right: 6rpx;
   top: 20rpx;
   opacity: 0.75;
 }
 
 .icon-shoal .icon-tail {
-  left: 13rpx;
+  left: 14rpx;
   bottom: 8rpx;
+  opacity: 0.55;
+}
+
+.icon-shoal .icon-extra-one,
+.icon-shoal .icon-extra-two,
+.icon-shoal .icon-extra-three {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5rpx 0 5rpx 7rpx;
+  border-color: transparent transparent transparent currentColor;
+  background: transparent;
+}
+
+.icon-shoal .icon-extra-one {
+  left: 19rpx;
+  top: 10rpx;
+}
+
+.icon-shoal .icon-extra-two {
+  right: 2rpx;
+  top: 19rpx;
+  opacity: 0.75;
+}
+
+.icon-shoal .icon-extra-three {
+  left: 29rpx;
+  bottom: 7rpx;
   opacity: 0.55;
 }
 
@@ -1012,6 +1115,37 @@
   line-height: 1.35;
 }
 
+.pending-card {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  width: 100%;
+  min-height: 132rpx;
+  margin-top: 14rpx;
+  padding: 16rpx;
+  border: 3rpx solid rgba(143, 211, 244, 0.22);
+  border-radius: 18rpx;
+  background: linear-gradient(180deg, #ffffff 0%, #f1faff 100%);
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 22rpx rgba(80, 150, 190, 0.1);
+}
+
+.discard-button {
+  flex: 1;
+  height: 72rpx;
+  border-radius: 14rpx;
+  background: #d8f3ff;
+  color: #24485f;
+  font-size: 26rpx;
+  font-weight: 700;
+  line-height: 72rpx;
+  box-shadow: 0 10rpx 22rpx rgba(80, 150, 190, 0.12);
+}
+
+.discard-button::after {
+  border: none;
+}
+
 .crab-piles {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1025,6 +1159,71 @@
   border-radius: 14rpx;
   background: #f7fbf6;
   box-sizing: border-box;
+}
+
+.crab-pile-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+  margin-top: 20rpx;
+}
+
+.crab-pile-button {
+  height: 112rpx;
+  padding: 18rpx;
+  border-radius: 16rpx;
+  background: #d8f3ff;
+  color: #24485f;
+  font-weight: 700;
+  line-height: 1.3;
+  box-shadow: 0 10rpx 22rpx rgba(80, 150, 190, 0.12);
+}
+
+.crab-pile-button::after {
+  border: none;
+}
+
+.crab-pile-button.disabled {
+  background: rgba(219, 238, 255, 0.56);
+  color: #8aa5b5;
+  box-shadow: none;
+}
+
+.crab-pile-title,
+.crab-pile-count {
+  display: block;
+}
+
+.crab-pile-title {
+  font-size: 26rpx;
+}
+
+.crab-pile-count {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+
+.crab-selected-pile {
+  margin-top: 18rpx;
+}
+
+.crab-back-button {
+  width: 100%;
+  height: 58rpx;
+  border-radius: 12rpx;
+  background: #eefaff;
+  color: #3f8fbb;
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 58rpx;
+}
+
+.crab-back-button::after {
+  border: none;
+}
+
+.crab-card-list {
+  margin-top: 14rpx;
 }
 
 .small-card {
@@ -1118,4 +1317,666 @@
   color: #4b5563;
   font-size: 23rpx;
   line-height: 1.5;
+}
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 46%, #f8fdff 100%);
+}
+
+.phase-banner,
+.ai-area,
+.player-area,
+.action-area,
+.temp-area,
+.pending-area,
+.log-area {
+  border-color: rgba(106, 174, 216, 0.14);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12rpx 30rpx rgba(80, 150, 190, 0.12);
+}
+
+.phase-title,
+.area-main,
+.area-side,
+.pending-card-name,
+.action-button,
+.pile-value,
+.card-name {
+  color: #24485f;
+}
+
+.phase-text {
+  color: #3f8fbb;
+}
+
+.phase-badge,
+.card-type {
+  background: #d8f3ff;
+  color: #24485f;
+}
+
+.ai-token,
+.deck-card {
+  background: #6eb9df;
+  box-shadow: 0 10rpx 22rpx rgba(80, 150, 190, 0.18);
+}
+
+.area-label,
+.pile-title,
+.empty-pile {
+  color: #5f8196;
+}
+
+.pile-area {
+  background: rgba(216, 243, 255, 0.5);
+}
+
+.pile-card,
+.card-item,
+.temp-card,
+.small-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f1faff 100%);
+  box-shadow: 0 12rpx 26rpx rgba(80, 150, 190, 0.12);
+}
+
+.paper-corner {
+  border-color: transparent #d8f3ff transparent transparent;
+}
+
+.pile-clickable {
+  border-color: #8fd3f4;
+  box-shadow: 0 18rpx 34rpx rgba(111, 185, 223, 0.22);
+}
+
+.pile-target,
+.card-item.selected {
+  background: #eefaff;
+  border-color: #8fd3f4;
+}
+
+.deck-card.pile-clickable,
+.action-button.accent {
+  border-color: #b9dcff;
+}
+
+.pile-mark {
+  color: rgba(80, 150, 190, 0.18);
+}
+
+.card-shape,
+.shape-crab,
+.shape-boat,
+.shape-fish,
+.shape-shark,
+.shape-swimmer,
+.shape-mermaid,
+.shape-shell,
+.shape-octopus,
+.shape-penguin,
+.shape-sailor,
+.shape-lighthouse,
+.shape-shoal,
+.shape-penguin-colony,
+.shape-captain {
+  background: #d8f3ff;
+  color: #4f9fd0;
+  box-shadow: inset 0 -7rpx 0 rgba(80, 150, 190, 0.08);
+}
+
+.shape-shark,
+.shape-penguin,
+.shape-penguin-colony {
+  background: #dbeeff;
+  color: #3c6797;
+}
+
+.shape-shell,
+.shape-captain {
+  background: #e8f6ff;
+  color: #65a9d8;
+}
+
+.icon-eye-left,
+.icon-eye-right {
+  background: #24485f;
+}
+
+.icon-penguin .icon-tail {
+  border-color: #8fd3f4 transparent transparent transparent;
+}
+
+.icon-captain .icon-extra-one {
+  background: #eefaff;
+}
+
+.pending-area {
+  border-color: rgba(143, 211, 244, 0.28);
+}
+
+.crab-pile {
+  background: #f1faff;
+}
+
+.action-button {
+  box-shadow: 0 10rpx 22rpx rgba(80, 150, 190, 0.12);
+}
+
+.action-button.accent {
+  background: #8fd3f4;
+  color: #ffffff;
+}
+
+.action-button.danger {
+  background: #b9dcff;
+  color: #24485f;
+}
+
+.action-button.disabled {
+  background: rgba(219, 238, 255, 0.72);
+  color: #6f8da0;
+}
+
+.action-icon {
+  background: #d8f3ff;
+  color: #24485f;
+}
+
+.countdown-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34rpx;
+  height: 34rpx;
+  margin-left: 10rpx;
+  padding: 0 8rpx;
+  border-radius: 999rpx;
+  background: #d8f3ff;
+  color: #24485f;
+  font-size: 22rpx;
+  font-weight: 800;
+  line-height: 34rpx;
+}
+
+.log-item {
+  color: #31586f;
+}
+
+/* Refined origami-style crab and mermaid icons */
+.icon-crab .icon-main {
+  left: 8rpx;
+  top: 18rpx;
+  width: 30rpx;
+  height: 19rpx;
+  border-radius: 16rpx 16rpx 12rpx 12rpx;
+}
+
+.icon-crab .icon-eye-left {
+  left: 17rpx;
+  top: 22rpx;
+}
+
+.icon-crab .icon-eye-right {
+  right: 17rpx;
+  top: 22rpx;
+}
+
+.icon-crab .icon-extra-one,
+.icon-crab .icon-extra-two {
+  top: 7rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border: 5rpx solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 999rpx;
+  background: transparent;
+}
+
+.icon-crab .icon-extra-one {
+  left: 0;
+  transform: rotate(-22deg);
+}
+
+.icon-crab .icon-extra-two {
+  right: 0;
+  transform: rotate(22deg);
+}
+
+.icon-crab .icon-tail,
+.icon-crab .icon-accent {
+  bottom: 6rpx;
+  width: 13rpx;
+  height: 5rpx;
+  border-radius: 999rpx;
+}
+
+.icon-crab .icon-tail {
+  left: 8rpx;
+  transform: rotate(24deg);
+}
+
+.icon-crab .icon-accent {
+  right: 8rpx;
+  transform: rotate(-24deg);
+}
+
+.icon-crab .icon-extra-three {
+  left: 19rpx;
+  top: 29rpx;
+  width: 8rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.icon-mermaid .icon-main {
+  left: 18rpx;
+  top: 5rpx;
+  width: 11rpx;
+  height: 11rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.icon-mermaid .icon-accent {
+  left: 12rpx;
+  top: 4rpx;
+  width: 23rpx;
+  height: 19rpx;
+  border-radius: 16rpx 16rpx 10rpx 10rpx;
+  transform: rotate(-10deg);
+}
+
+.icon-mermaid .icon-tail {
+  left: 16rpx;
+  top: 19rpx;
+  width: 15rpx;
+  height: 19rpx;
+  border-radius: 12rpx 12rpx 5rpx 5rpx;
+  border: none;
+  background: currentColor;
+  transform: rotate(-4deg);
+}
+
+.icon-mermaid .icon-extra-one,
+.icon-mermaid .icon-extra-two {
+  bottom: 4rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: transparent;
+}
+
+.icon-mermaid .icon-extra-one {
+  left: 9rpx;
+  border-width: 0 12rpx 13rpx 0;
+  border-color: transparent currentColor transparent transparent;
+  transform: rotate(-16deg);
+}
+
+.icon-mermaid .icon-extra-two {
+  right: 8rpx;
+  border-width: 0 0 13rpx 12rpx;
+  border-color: transparent transparent transparent currentColor;
+  transform: rotate(16deg);
+}
+
+.icon-mermaid .icon-extra-three {
+  left: 20rpx;
+  top: 24rpx;
+  width: 5rpx;
+  height: 13rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+/* Refined full card icon set */
+.icon-boat .icon-main {
+  left: 6rpx;
+  bottom: 7rpx;
+  width: 34rpx;
+  height: 12rpx;
+  border-radius: 3rpx 3rpx 14rpx 14rpx;
+}
+
+.icon-boat .icon-accent {
+  left: 21rpx;
+  top: 6rpx;
+  width: 4rpx;
+  height: 31rpx;
+  border-radius: 999rpx;
+}
+
+.icon-boat .icon-tail {
+  left: 24rpx;
+  top: 7rpx;
+  border-width: 0 0 25rpx 17rpx;
+}
+
+.icon-boat .icon-extra-one {
+  left: 7rpx;
+  top: 12rpx;
+  border-width: 20rpx 12rpx 0 0;
+  opacity: 0.78;
+}
+
+.icon-fish .icon-main {
+  left: 7rpx;
+  top: 15rpx;
+  width: 28rpx;
+  height: 18rpx;
+  border-radius: 18rpx 13rpx 13rpx 18rpx;
+}
+
+.icon-fish .icon-tail {
+  right: 3rpx;
+  top: 16rpx;
+  border-width: 9rpx 0 9rpx 14rpx;
+}
+
+.icon-fish .icon-extra-one {
+  left: 20rpx;
+  top: 10rpx;
+  width: 9rpx;
+  height: 11rpx;
+  border-radius: 999rpx 999rpx 4rpx 4rpx;
+  transform: rotate(18deg);
+  opacity: 0.75;
+}
+
+.icon-shark .icon-main {
+  left: 4rpx;
+  top: 16rpx;
+  width: 33rpx;
+  height: 15rpx;
+  border-radius: 22rpx 9rpx 9rpx 22rpx;
+}
+
+.icon-shark .icon-tail {
+  right: 2rpx;
+  top: 14rpx;
+  border-width: 10rpx 0 10rpx 15rpx;
+}
+
+.icon-shark .icon-extra-one {
+  left: 20rpx;
+  top: 7rpx;
+  border-width: 0 8rpx 12rpx 8rpx;
+}
+
+.icon-shark .icon-extra-two {
+  left: 15rpx;
+  top: 26rpx;
+  width: 13rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.icon-swimmer .icon-main {
+  left: 16rpx;
+  top: 6rpx;
+  width: 14rpx;
+  height: 14rpx;
+}
+
+.icon-swimmer .icon-accent {
+  top: 19rpx;
+  left: 9rpx;
+  width: 28rpx;
+  height: 9rpx;
+}
+
+.icon-swimmer .icon-tail {
+  top: 29rpx;
+  left: 5rpx;
+  width: 36rpx;
+  height: 8rpx;
+}
+
+.icon-swimmer .icon-extra-one {
+  top: 36rpx;
+  left: 9rpx;
+  width: 28rpx;
+}
+
+.icon-shell .icon-main {
+  left: 7rpx;
+  top: 10rpx;
+  width: 32rpx;
+  height: 28rpx;
+  border-radius: 999rpx 999rpx 10rpx 10rpx;
+}
+
+.icon-shell .icon-accent,
+.icon-shell .icon-tail,
+.icon-shell .icon-extra-one {
+  top: 15rpx;
+  height: 22rpx;
+}
+
+.icon-octopus .icon-main {
+  left: 9rpx;
+  top: 8rpx;
+  width: 28rpx;
+  height: 25rpx;
+  border-radius: 999rpx 999rpx 15rpx 15rpx;
+}
+
+.icon-octopus .icon-accent,
+.icon-octopus .icon-tail,
+.icon-octopus .icon-extra-one,
+.icon-octopus .icon-extra-two {
+  bottom: 6rpx;
+  width: 7rpx;
+  height: 13rpx;
+  border-radius: 999rpx 999rpx 5rpx 5rpx;
+}
+
+.icon-penguin .icon-main {
+  left: 12rpx;
+  top: 6rpx;
+  width: 23rpx;
+  height: 33rpx;
+  border-radius: 999rpx 999rpx 12rpx 12rpx;
+}
+
+.icon-penguin .icon-accent {
+  left: 17rpx;
+  top: 17rpx;
+  width: 13rpx;
+  height: 18rpx;
+}
+
+.icon-penguin .icon-extra-one,
+.icon-penguin .icon-extra-two {
+  top: 20rpx;
+  width: 7rpx;
+  height: 13rpx;
+  border-radius: 999rpx;
+  opacity: 0.72;
+}
+
+.icon-penguin .icon-extra-one {
+  left: 8rpx;
+  transform: rotate(22deg);
+}
+
+.icon-penguin .icon-extra-two {
+  right: 8rpx;
+  transform: rotate(-22deg);
+}
+
+.icon-sailor .icon-accent,
+.icon-captain .icon-accent {
+  left: 10rpx;
+  top: 8rpx;
+  width: 26rpx;
+  height: 11rpx;
+  border-radius: 6rpx 6rpx 12rpx 12rpx;
+}
+
+.icon-sailor .icon-tail,
+.icon-captain .icon-tail {
+  left: 18rpx;
+  top: 3rpx;
+  width: 10rpx;
+  height: 8rpx;
+}
+
+.icon-sailor .icon-extra-one,
+.icon-captain .icon-extra-two {
+  left: 17rpx;
+  top: 23rpx;
+  width: 12rpx;
+  height: 11rpx;
+  border-radius: 4rpx 4rpx 8rpx 8rpx;
+  background: currentColor;
+}
+
+.icon-lighthouse .icon-main {
+  left: 16rpx;
+  top: 13rpx;
+  width: 15rpx;
+  height: 28rpx;
+  border-radius: 3rpx 3rpx 8rpx 8rpx;
+}
+
+.icon-lighthouse .icon-accent {
+  left: 11rpx;
+  top: 8rpx;
+  width: 25rpx;
+}
+
+.icon-lighthouse .icon-tail {
+  left: 19rpx;
+  top: 2rpx;
+}
+
+.icon-lighthouse .icon-extra-three {
+  left: 6rpx;
+  top: 8rpx;
+  width: 8rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.icon-penguin-colony .icon-main {
+  left: 15rpx;
+  top: 7rpx;
+  width: 18rpx;
+  height: 27rpx;
+}
+
+.icon-penguin-colony .icon-accent,
+.icon-penguin-colony .icon-tail {
+  top: 17rpx;
+  width: 13rpx;
+  height: 21rpx;
+}
+
+.icon-captain .icon-extra-one {
+  left: 19rpx;
+  top: 10rpx;
+  width: 8rpx;
+  height: 5rpx;
+}
+
+/* Mermaid reference refinement: long hair, face, curved tail and fins */
+.icon-mermaid .icon-accent {
+  left: 10rpx;
+  top: 4rpx;
+  width: 32rpx;
+  height: 23rpx;
+  border-radius: 18rpx 22rpx 18rpx 10rpx;
+  background: currentColor;
+  transform: rotate(7deg);
+}
+
+.icon-mermaid .icon-main {
+  left: 14rpx;
+  top: 8rpx;
+  width: 16rpx;
+  height: 15rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.icon-mermaid .icon-eye-left,
+.icon-mermaid .icon-eye-right {
+  top: 14rpx;
+  width: 3rpx;
+  height: 3rpx;
+  background: #24485f;
+}
+
+.icon-mermaid .icon-eye-left {
+  left: 18rpx;
+}
+
+.icon-mermaid .icon-eye-right {
+  left: 25rpx;
+}
+
+.icon-mermaid .icon-tail {
+  left: 16rpx;
+  top: 22rpx;
+  width: 17rpx;
+  height: 18rpx;
+  border: none;
+  border-radius: 10rpx 10rpx 14rpx 14rpx;
+  background: currentColor;
+  transform: rotate(-10deg);
+}
+
+.icon-mermaid .icon-extra-one,
+.icon-mermaid .icon-extra-two {
+  bottom: 3rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: transparent;
+}
+
+.icon-mermaid .icon-extra-one {
+  left: 9rpx;
+  border-width: 0 14rpx 13rpx 0;
+  border-color: transparent currentColor transparent transparent;
+  transform: rotate(-18deg);
+}
+
+.icon-mermaid .icon-extra-two {
+  right: 6rpx;
+  border-width: 0 0 13rpx 14rpx;
+  border-color: transparent transparent transparent currentColor;
+  transform: rotate(18deg);
+}
+
+.icon-mermaid .icon-extra-three {
+  left: 31rpx;
+  top: 7rpx;
+  width: 7rpx;
+  height: 7rpx;
+  border-radius: 2rpx;
+  background: rgba(255, 255, 255, 0.82);
+  transform: rotate(45deg);
+}
+
+.pile-shape.card-shape {
+  border-radius: 18rpx;
+  background: #d8f3ff;
+  color: #4f9fd0;
+  overflow: hidden;
+}
+
+.pile-shape .card-icon-image {
+  position: relative;
+  z-index: 1;
+}
+
+.pile-shape .combo-hint {
+  z-index: 4;
 }

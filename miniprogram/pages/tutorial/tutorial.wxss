@@ -103,3 +103,41 @@
   opacity: 0.86;
   transform: scale(0.99);
 }
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 48%, #f8fdff 100%);
+}
+
+.kicker {
+  color: #3f8fbb;
+}
+
+.title,
+.module-title {
+  color: #24485f;
+}
+
+.subtitle,
+.module-text {
+  color: #5f8196;
+}
+
+.rule-card {
+  border-color: rgba(106, 174, 216, 0.14);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12rpx 30rpx rgba(80, 150, 190, 0.12);
+}
+
+.module-index {
+  background: #d8f3ff;
+  color: #24485f;
+  box-shadow: inset 0 -4rpx 0 rgba(80, 150, 190, 0.08);
+}
+
+.home-button {
+  background: #8fd3f4;
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}

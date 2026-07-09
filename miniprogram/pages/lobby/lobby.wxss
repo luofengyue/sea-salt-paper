@@ -192,3 +192,54 @@
   opacity: 0.86;
   transform: scale(0.99);
 }
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 52%, #f8fdff 100%);
+}
+
+.kicker {
+  color: #3f8fbb;
+}
+
+.title,
+.game-title,
+.placeholder-title {
+  color: #24485f;
+}
+
+.subtitle,
+.game-subtitle,
+.placeholder-subtitle {
+  color: #5f8196;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14rpx 30rpx rgba(80, 150, 190, 0.12);
+}
+
+.paper-shadow {
+  background: rgba(80, 150, 190, 0.14);
+  box-shadow: 0 12rpx 24rpx rgba(80, 150, 190, 0.12);
+}
+
+.fold-blue {
+  border-color: transparent #8fd3f4 transparent transparent;
+}
+
+.fold-mint {
+  border-color: transparent transparent transparent #c6f0ff;
+}
+
+.fold-coral {
+  border-color: transparent transparent #b9dcff transparent;
+}
+
+.game-tag,
+.placeholder-icon {
+  background: #d8f3ff;
+  color: #24485f;
+}

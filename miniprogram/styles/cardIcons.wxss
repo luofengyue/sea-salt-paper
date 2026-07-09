@@ -26,62 +26,74 @@
   width: 5rpx;
   height: 5rpx;
   border-radius: 999rpx;
-  background: #174a63;
+  background: #24485f;
 }
 
 .icon-crab .icon-main {
-  left: 10rpx;
+  left: 9rpx;
   top: 18rpx;
-  width: 26rpx;
-  height: 17rpx;
-  border-radius: 18rpx;
+  width: 28rpx;
+  height: 18rpx;
+  border-radius: 18rpx 18rpx 14rpx 14rpx;
 }
 
 .icon-crab .icon-eye-left {
-  left: 17rpx;
-  top: 16rpx;
+  left: 16rpx;
+  top: 14rpx;
 }
 
 .icon-crab .icon-eye-right {
-  right: 17rpx;
-  top: 16rpx;
+  right: 16rpx;
+  top: 14rpx;
 }
 
 .icon-crab .icon-extra-one,
 .icon-crab .icon-extra-two {
-  top: 12rpx;
-  width: 13rpx;
-  height: 13rpx;
-  border: 4rpx solid currentColor;
+  top: 10rpx;
+  width: 15rpx;
+  height: 15rpx;
+  border: 5rpx solid currentColor;
   border-bottom-color: transparent;
+  border-left-color: currentColor;
   border-radius: 999rpx;
   background: transparent;
 }
 
 .icon-crab .icon-extra-one {
-  left: 0;
-  transform: rotate(-28deg);
+  left: -1rpx;
+  transform: rotate(-34deg);
 }
 
 .icon-crab .icon-extra-two {
-  right: 0;
-  transform: rotate(28deg);
+  right: -1rpx;
+  transform: rotate(34deg);
 }
 
 .icon-crab .icon-tail,
 .icon-crab .icon-accent {
-  bottom: 7rpx;
-  width: 8rpx;
+  bottom: 6rpx;
+  width: 10rpx;
   height: 4rpx;
   border-radius: 999rpx;
 }
 
 .icon-crab .icon-tail {
-  left: 13rpx;
+  left: 10rpx;
+  transform: rotate(18deg);
 }
 
 .icon-crab .icon-accent {
-  right: 13rpx;
+  right: 10rpx;
+  transform: rotate(-18deg);
+}
+
+.icon-crab .icon-extra-three {
+  left: 20rpx;
+  top: 27rpx;
+  width: 7rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .icon-boat .icon-main {
@@ -257,19 +269,19 @@
 }
 
 .icon-shell .icon-main {
-  left: 8rpx;
-  top: 12rpx;
-  width: 30rpx;
-  height: 26rpx;
-  border-radius: 999rpx 999rpx 12rpx 12rpx;
+  left: 7rpx;
+  top: 11rpx;
+  width: 32rpx;
+  height: 28rpx;
+  border-radius: 999rpx 999rpx 10rpx 10rpx;
 }
 
 .icon-shell .icon-accent,
 .icon-shell .icon-tail,
 .icon-shell .icon-extra-one {
-  top: 17rpx;
+  top: 16rpx;
   width: 4rpx;
-  height: 18rpx;
+  height: 21rpx;
   border-radius: 999rpx;
   background: rgba(255, 255, 255, 0.68);
 }
@@ -286,6 +298,23 @@
 .icon-shell .icon-extra-one {
   right: 16rpx;
   transform: rotate(18deg);
+}
+
+.icon-shell .icon-extra-two,
+.icon-shell .icon-extra-three {
+  bottom: 8rpx;
+  width: 10rpx;
+  height: 7rpx;
+  border-radius: 999rpx 999rpx 4rpx 4rpx;
+  background: currentColor;
+}
+
+.icon-shell .icon-extra-two {
+  left: 8rpx;
+}
+
+.icon-shell .icon-extra-three {
+  right: 8rpx;
 }
 
 .icon-octopus .icon-main {
@@ -372,7 +401,7 @@
   height: 0;
   border-style: solid;
   border-width: 6rpx 5rpx 0 5rpx;
-  border-color: #f2c94c transparent transparent transparent;
+  border-color: #8fd3f4 transparent transparent transparent;
   background: transparent;
 }
 
@@ -446,25 +475,53 @@
 .icon-shoal .icon-main,
 .icon-shoal .icon-accent,
 .icon-shoal .icon-tail {
-  width: 17rpx;
-  height: 10rpx;
+  width: 15rpx;
+  height: 9rpx;
   border-radius: 999rpx 8rpx 8rpx 999rpx;
 }
 
 .icon-shoal .icon-main {
-  left: 7rpx;
-  top: 12rpx;
+  left: 6rpx;
+  top: 11rpx;
 }
 
 .icon-shoal .icon-accent {
-  right: 7rpx;
+  right: 6rpx;
   top: 20rpx;
   opacity: 0.75;
 }
 
 .icon-shoal .icon-tail {
-  left: 13rpx;
+  left: 14rpx;
   bottom: 8rpx;
+  opacity: 0.55;
+}
+
+.icon-shoal .icon-extra-one,
+.icon-shoal .icon-extra-two,
+.icon-shoal .icon-extra-three {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5rpx 0 5rpx 7rpx;
+  border-color: transparent transparent transparent currentColor;
+  background: transparent;
+}
+
+.icon-shoal .icon-extra-one {
+  left: 19rpx;
+  top: 10rpx;
+}
+
+.icon-shoal .icon-extra-two {
+  right: 2rpx;
+  top: 19rpx;
+  opacity: 0.75;
+}
+
+.icon-shoal .icon-extra-three {
+  left: 29rpx;
+  bottom: 7rpx;
   opacity: 0.55;
 }
 
@@ -497,5 +554,466 @@
   width: 6rpx;
   height: 6rpx;
   border-radius: 999rpx;
-  background: #fff7cf;
+  background: #eefaff;
+}
+
+/* Refined origami-style crab and mermaid icons */
+.icon-crab .icon-main {
+  left: 8rpx;
+  top: 18rpx;
+  width: 30rpx;
+  height: 19rpx;
+  border-radius: 16rpx 16rpx 12rpx 12rpx;
+}
+
+.icon-crab .icon-eye-left {
+  left: 17rpx;
+  top: 22rpx;
+}
+
+.icon-crab .icon-eye-right {
+  right: 17rpx;
+  top: 22rpx;
+}
+
+.icon-crab .icon-extra-one,
+.icon-crab .icon-extra-two {
+  top: 7rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border: 5rpx solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 999rpx;
+  background: transparent;
+}
+
+.icon-crab .icon-extra-one {
+  left: 0;
+  transform: rotate(-22deg);
+}
+
+.icon-crab .icon-extra-two {
+  right: 0;
+  transform: rotate(22deg);
+}
+
+.icon-crab .icon-tail,
+.icon-crab .icon-accent {
+  bottom: 6rpx;
+  width: 13rpx;
+  height: 5rpx;
+  border-radius: 999rpx;
+}
+
+.icon-crab .icon-tail {
+  left: 8rpx;
+  transform: rotate(24deg);
+}
+
+.icon-crab .icon-accent {
+  right: 8rpx;
+  transform: rotate(-24deg);
+}
+
+.icon-crab .icon-extra-three {
+  left: 19rpx;
+  top: 29rpx;
+  width: 8rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.icon-mermaid .icon-main {
+  left: 18rpx;
+  top: 5rpx;
+  width: 11rpx;
+  height: 11rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.icon-mermaid .icon-accent {
+  left: 12rpx;
+  top: 4rpx;
+  width: 23rpx;
+  height: 19rpx;
+  border-radius: 16rpx 16rpx 10rpx 10rpx;
+  transform: rotate(-10deg);
+}
+
+.icon-mermaid .icon-tail {
+  left: 16rpx;
+  top: 19rpx;
+  width: 15rpx;
+  height: 19rpx;
+  border-radius: 12rpx 12rpx 5rpx 5rpx;
+  border: none;
+  background: currentColor;
+  transform: rotate(-4deg);
+}
+
+.icon-mermaid .icon-extra-one,
+.icon-mermaid .icon-extra-two {
+  bottom: 4rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: transparent;
+}
+
+.icon-mermaid .icon-extra-one {
+  left: 9rpx;
+  border-width: 0 12rpx 13rpx 0;
+  border-color: transparent currentColor transparent transparent;
+  transform: rotate(-16deg);
+}
+
+.icon-mermaid .icon-extra-two {
+  right: 8rpx;
+  border-width: 0 0 13rpx 12rpx;
+  border-color: transparent transparent transparent currentColor;
+  transform: rotate(16deg);
+}
+
+.icon-mermaid .icon-extra-three {
+  left: 20rpx;
+  top: 24rpx;
+  width: 5rpx;
+  height: 13rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+/* Refined full card icon set */
+.icon-boat .icon-main {
+  left: 6rpx;
+  bottom: 7rpx;
+  width: 34rpx;
+  height: 12rpx;
+  border-radius: 3rpx 3rpx 14rpx 14rpx;
+}
+
+.icon-boat .icon-accent {
+  left: 21rpx;
+  top: 6rpx;
+  width: 4rpx;
+  height: 31rpx;
+  border-radius: 999rpx;
+}
+
+.icon-boat .icon-tail {
+  left: 24rpx;
+  top: 7rpx;
+  border-width: 0 0 25rpx 17rpx;
+}
+
+.icon-boat .icon-extra-one {
+  left: 7rpx;
+  top: 12rpx;
+  border-width: 20rpx 12rpx 0 0;
+  opacity: 0.78;
+}
+
+.icon-fish .icon-main {
+  left: 7rpx;
+  top: 15rpx;
+  width: 28rpx;
+  height: 18rpx;
+  border-radius: 18rpx 13rpx 13rpx 18rpx;
+}
+
+.icon-fish .icon-tail {
+  right: 3rpx;
+  top: 16rpx;
+  border-width: 9rpx 0 9rpx 14rpx;
+}
+
+.icon-fish .icon-extra-one {
+  left: 20rpx;
+  top: 10rpx;
+  width: 9rpx;
+  height: 11rpx;
+  border-radius: 999rpx 999rpx 4rpx 4rpx;
+  transform: rotate(18deg);
+  opacity: 0.75;
+}
+
+.icon-shark .icon-main {
+  left: 4rpx;
+  top: 16rpx;
+  width: 33rpx;
+  height: 15rpx;
+  border-radius: 22rpx 9rpx 9rpx 22rpx;
+}
+
+.icon-shark .icon-tail {
+  right: 2rpx;
+  top: 14rpx;
+  border-width: 10rpx 0 10rpx 15rpx;
+}
+
+.icon-shark .icon-extra-one {
+  left: 20rpx;
+  top: 7rpx;
+  border-width: 0 8rpx 12rpx 8rpx;
+}
+
+.icon-shark .icon-extra-two {
+  left: 15rpx;
+  top: 26rpx;
+  width: 13rpx;
+  height: 3rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.icon-swimmer .icon-main {
+  left: 16rpx;
+  top: 6rpx;
+  width: 14rpx;
+  height: 14rpx;
+}
+
+.icon-swimmer .icon-accent {
+  top: 19rpx;
+  left: 9rpx;
+  width: 28rpx;
+  height: 9rpx;
+}
+
+.icon-swimmer .icon-tail {
+  top: 29rpx;
+  left: 5rpx;
+  width: 36rpx;
+  height: 8rpx;
+}
+
+.icon-swimmer .icon-extra-one {
+  top: 36rpx;
+  left: 9rpx;
+  width: 28rpx;
+}
+
+.icon-shell .icon-main {
+  left: 7rpx;
+  top: 10rpx;
+  width: 32rpx;
+  height: 28rpx;
+  border-radius: 999rpx 999rpx 10rpx 10rpx;
+}
+
+.icon-shell .icon-accent,
+.icon-shell .icon-tail,
+.icon-shell .icon-extra-one {
+  top: 15rpx;
+  height: 22rpx;
+}
+
+.icon-octopus .icon-main {
+  left: 9rpx;
+  top: 8rpx;
+  width: 28rpx;
+  height: 25rpx;
+  border-radius: 999rpx 999rpx 15rpx 15rpx;
+}
+
+.icon-octopus .icon-accent,
+.icon-octopus .icon-tail,
+.icon-octopus .icon-extra-one,
+.icon-octopus .icon-extra-two {
+  bottom: 6rpx;
+  width: 7rpx;
+  height: 13rpx;
+  border-radius: 999rpx 999rpx 5rpx 5rpx;
+}
+
+.icon-penguin .icon-main {
+  left: 12rpx;
+  top: 6rpx;
+  width: 23rpx;
+  height: 33rpx;
+  border-radius: 999rpx 999rpx 12rpx 12rpx;
+}
+
+.icon-penguin .icon-accent {
+  left: 17rpx;
+  top: 17rpx;
+  width: 13rpx;
+  height: 18rpx;
+}
+
+.icon-penguin .icon-extra-one,
+.icon-penguin .icon-extra-two {
+  top: 20rpx;
+  width: 7rpx;
+  height: 13rpx;
+  border-radius: 999rpx;
+  opacity: 0.72;
+}
+
+.icon-penguin .icon-extra-one {
+  left: 8rpx;
+  transform: rotate(22deg);
+}
+
+.icon-penguin .icon-extra-two {
+  right: 8rpx;
+  transform: rotate(-22deg);
+}
+
+.icon-sailor .icon-accent,
+.icon-captain .icon-accent {
+  left: 10rpx;
+  top: 8rpx;
+  width: 26rpx;
+  height: 11rpx;
+  border-radius: 6rpx 6rpx 12rpx 12rpx;
+}
+
+.icon-sailor .icon-tail,
+.icon-captain .icon-tail {
+  left: 18rpx;
+  top: 3rpx;
+  width: 10rpx;
+  height: 8rpx;
+}
+
+.icon-sailor .icon-extra-one,
+.icon-captain .icon-extra-two {
+  left: 17rpx;
+  top: 23rpx;
+  width: 12rpx;
+  height: 11rpx;
+  border-radius: 4rpx 4rpx 8rpx 8rpx;
+  background: currentColor;
+}
+
+.icon-lighthouse .icon-main {
+  left: 16rpx;
+  top: 13rpx;
+  width: 15rpx;
+  height: 28rpx;
+  border-radius: 3rpx 3rpx 8rpx 8rpx;
+}
+
+.icon-lighthouse .icon-accent {
+  left: 11rpx;
+  top: 8rpx;
+  width: 25rpx;
+}
+
+.icon-lighthouse .icon-tail {
+  left: 19rpx;
+  top: 2rpx;
+}
+
+.icon-lighthouse .icon-extra-three {
+  left: 6rpx;
+  top: 8rpx;
+  width: 8rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.icon-penguin-colony .icon-main {
+  left: 15rpx;
+  top: 7rpx;
+  width: 18rpx;
+  height: 27rpx;
+}
+
+.icon-penguin-colony .icon-accent,
+.icon-penguin-colony .icon-tail {
+  top: 17rpx;
+  width: 13rpx;
+  height: 21rpx;
+}
+
+.icon-captain .icon-extra-one {
+  left: 19rpx;
+  top: 10rpx;
+  width: 8rpx;
+  height: 5rpx;
+}
+
+/* Mermaid reference refinement: long hair, face, curved tail and fins */
+.icon-mermaid .icon-accent {
+  left: 10rpx;
+  top: 4rpx;
+  width: 32rpx;
+  height: 23rpx;
+  border-radius: 18rpx 22rpx 18rpx 10rpx;
+  background: currentColor;
+  transform: rotate(7deg);
+}
+
+.icon-mermaid .icon-main {
+  left: 14rpx;
+  top: 8rpx;
+  width: 16rpx;
+  height: 15rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.icon-mermaid .icon-eye-left,
+.icon-mermaid .icon-eye-right {
+  top: 14rpx;
+  width: 3rpx;
+  height: 3rpx;
+  background: #24485f;
+}
+
+.icon-mermaid .icon-eye-left {
+  left: 18rpx;
+}
+
+.icon-mermaid .icon-eye-right {
+  left: 25rpx;
+}
+
+.icon-mermaid .icon-tail {
+  left: 16rpx;
+  top: 22rpx;
+  width: 17rpx;
+  height: 18rpx;
+  border: none;
+  border-radius: 10rpx 10rpx 14rpx 14rpx;
+  background: currentColor;
+  transform: rotate(-10deg);
+}
+
+.icon-mermaid .icon-extra-one,
+.icon-mermaid .icon-extra-two {
+  bottom: 3rpx;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: transparent;
+}
+
+.icon-mermaid .icon-extra-one {
+  left: 9rpx;
+  border-width: 0 14rpx 13rpx 0;
+  border-color: transparent currentColor transparent transparent;
+  transform: rotate(-18deg);
+}
+
+.icon-mermaid .icon-extra-two {
+  right: 6rpx;
+  border-width: 0 0 13rpx 14rpx;
+  border-color: transparent transparent transparent currentColor;
+  transform: rotate(18deg);
+}
+
+.icon-mermaid .icon-extra-three {
+  left: 31rpx;
+  top: 7rpx;
+  width: 7rpx;
+  height: 7rpx;
+  border-radius: 2rpx;
+  background: rgba(255, 255, 255, 0.82);
+  transform: rotate(45deg);
 }

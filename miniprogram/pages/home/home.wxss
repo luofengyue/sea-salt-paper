@@ -241,6 +241,106 @@
 }
 
 .button-press {
-  opacity: 0.86;
+  background: #8fd3f4;
+  color: #ffffff;
+  opacity: 0.92;
   transform: scale(0.99);
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 52%, #f8fdff 100%);
+}
+
+.hall-button,
+.lobby-status,
+.action-button {
+  box-shadow: 0 12rpx 28rpx rgba(80, 150, 190, 0.12);
+}
+
+.hall-button,
+.subtitle,
+.status-value {
+  color: #24485f;
+}
+
+.title {
+  color: #203f55;
+}
+
+.kicker {
+  color: #3f8fbb;
+}
+
+.wave-layer {
+  background:
+    linear-gradient(135deg, transparent 0, transparent 24rpx, rgba(198, 240, 255, 0.9) 24rpx, rgba(198, 240, 255, 0.9) 48rpx, transparent 48rpx, transparent 72rpx),
+    linear-gradient(45deg, transparent 0, transparent 30rpx, rgba(143, 211, 244, 0.32) 30rpx, rgba(143, 211, 244, 0.32) 58rpx, transparent 58rpx, transparent 88rpx);
+}
+
+.paper-shadow {
+  background: rgba(80, 150, 190, 0.14);
+  box-shadow: 0 12rpx 24rpx rgba(80, 150, 190, 0.12);
+}
+
+.fold-blue {
+  border-color: transparent #8fd3f4 transparent transparent;
+}
+
+.fold-mint {
+  border-color: transparent transparent transparent #c6f0ff;
+}
+
+.fold-coral {
+  border-color: transparent transparent #b9dcff transparent;
+}
+
+.lobby-status {
+  border-color: rgba(106, 174, 216, 0.14);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.status-label {
+  color: #5f8196;
+}
+
+.status-divider {
+  background: rgba(106, 174, 216, 0.18);
+}
+
+.action-button {
+  color: #24485f;
+}
+
+.action-button.primary {
+  background: #8fd3f4;
+  color: #ffffff;
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}
+
+.button-icon {
+  background: #d8f3ff;
+  color: #24485f;
+  box-shadow: inset 0 -4rpx 0 rgba(80, 150, 190, 0.08);
+}
+
+.primary .button-icon {
+  color: #3f8fbb;
+}
+
+.button-arrow,
+.primary .button-arrow {
+  color: #7bbdf0;
+}
+
+.button-press .button-icon {
+  background: #ffffff;
+  color: #3f8fbb;
+}
+
+.button-press .button-arrow {
+  color: #ffffff;
 }

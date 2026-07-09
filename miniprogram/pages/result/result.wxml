@@ -1,7 +1,7 @@
 <view class="page">
   <view class="header">
     <text class="kicker">Score Sheet</text>
-    <text class="title">结算页面</text>
+    <text class="title">游戏结束</text>
     <text class="subtitle" wx:if="{{result}}">{{result.roundEndReasonText}} · {{result.scoringModeText}}</text>
   </view>
 
@@ -41,8 +41,7 @@
   </view>
 
   <view class="actions" wx:if="{{result}}">
-    <button class="action-button primary" wx:if="{{!result.isGameOver}}" bindtap="nextRound" hover-class="button-press"><text class="action-icon">→</text>下一轮</button>
-    <button class="action-button primary" wx:if="{{result.isGameOver}}" bindtap="restartGame" hover-class="button-press"><text class="action-icon">↻</text>重新开始</button>
+    <button class="action-button primary" bindtap="restartGame" hover-class="button-press"><text class="action-icon">↻</text>重新开始</button>
     <button class="action-button" bindtap="goHome" hover-class="button-press"><text class="action-icon">⌂</text>返回大厅</button>
   </view>
 </view>

@@ -30,9 +30,17 @@ Page({
     canTakeDiscardB: false,
     canChooseDiscardPile: false,
     canAct: false,
+    canPlayPair: false,
     canCall: false,
-    canChooseCrabPile: false
+    canChooseCrabPile: false,
+    endTurnCountdown: 0,
+    isEndTurnCountdownActive: false,
+    crabSelectedPile: '',
+    crabSelectedPileCards: []
   },
+
+  endTurnTimer: null,
+  endTurnCountdownTimer: null,
 
   onLoad(options) {
     if (options && options.reset === '1') {
@@ -41,7 +49,11 @@ Page({
     this.initGame()
   },
 
-  initGame() {
+  onUnload() {
+    this.clearEndTurnCountdown()
+  },
+
+  initGame(openingLog = '') {
     const totalScores = wx.getStorageSync('totalScores') || { player: 0, ai: 0 }
     const deck = shuffleDeck(createDeck(cards))
     const discardPileA = [deck.shift()]
@@ -79,7 +91,8 @@ Page({
       isLastChanceFinalTurn: false,
       roundEndReason: '',
       scoringMode: '',
-      logs: ['新一轮开始，翻开两个弃牌堆。']
+      crabSelectedPile: '',
+      logs: openingLog ? [openingLog, '新一轮开始，翻开两个弃牌堆。'] : ['新一轮开始，翻开两个弃牌堆。']
     }
 
     this.updateScores(gameState)
@@ -90,7 +103,7 @@ Page({
     const phaseTextMap = {
       draw: '拿 1 张牌：从牌堆摸 2 选 1，或从弃牌堆拿顶牌。',
       choose: '请选择保留哪一张牌。',
-      discard: '请选择把剩下的牌弃到哪个弃牌堆。',
+      discard: '请选择把待弃牌放到弃牌堆 A 或 B。',
       action: '可打出组合，或在达到 7 分后立即停止 / 最后机会。',
       crabChoice: '螃蟹效果：从一个弃牌堆拿 1 张牌。',
       lastChanceAi: '你宣布最后机会，AI 正在进行最后一回合。',
@@ -115,8 +128,21 @@ Page({
     const phase = gameState.phase
     const player = gameState.players[0]
     const ai = gameState.players[1]
-    const discardPileATop = gameState.discardPileA[gameState.discardPileA.length - 1]
-    const discardPileBTop = gameState.discardPileB[gameState.discardPileB.length - 1]
+    if (phase !== 'action') {
+      this.clearPlayerSelection(gameState)
+    }
+    if (phase !== 'crabChoice') {
+      gameState.crabSelectedPile = ''
+    }
+    const discardPileATop = gameState.discardPileA[gameState.discardPileA.length - 1] || null
+    const discardPileBTop = gameState.discardPileB[gameState.discardPileB.length - 1] || null
+    const selectedPairType = this.getSelectedPairType(gameState)
+    const crabSelectedPile = phase === 'crabChoice' ? (gameState.crabSelectedPile || '') : ''
+    const crabSelectedPileCards = crabSelectedPile === 'A'
+      ? gameState.discardPileA
+      : crabSelectedPile === 'B'
+        ? gameState.discardPileB
+        : []
 
     this.setData({
       gameState,
@@ -134,9 +160,79 @@ Page({
       canTakeDiscardB: phase === 'draw' && !!gameState.discardPileB.length,
       canChooseDiscardPile: phase === 'discard',
       canAct: phase === 'action',
+      canPlayPair: phase === 'action' && !!selectedPairType,
       canCall: phase === 'action' && player.score >= CALL_SCORE && !gameState.isLastChanceFinalTurn,
-      canChooseCrabPile: phase === 'crabChoice'
+      canChooseCrabPile: phase === 'crabChoice',
+      crabSelectedPile,
+      crabSelectedPileCards
     })
+
+    if (phase === 'action') {
+      this.startEndTurnCountdown()
+    } else {
+      this.clearEndTurnCountdown()
+    }
+  },
+
+  startEndTurnCountdown(forceRestart = false) {
+    if (this.endTurnTimer && !forceRestart) return
+
+    this.clearEndTurnCountdown()
+    let remaining = 4
+    this.setData({
+      endTurnCountdown: remaining,
+      isEndTurnCountdownActive: true
+    })
+
+    this.endTurnCountdownTimer = setInterval(() => {
+      remaining -= 1
+      if (remaining > 0) {
+        this.setData({ endTurnCountdown: remaining })
+      }
+    }, 1000)
+
+    this.endTurnTimer = setTimeout(() => {
+      this.clearEndTurnCountdown()
+      const gameState = this.data.gameState
+      if (gameState && gameState.phase === 'action') {
+        this.endTurn({ auto: true })
+      }
+    }, 4000)
+  },
+
+  clearEndTurnCountdown() {
+    if (this.endTurnTimer) {
+      clearTimeout(this.endTurnTimer)
+      this.endTurnTimer = null
+    }
+    if (this.endTurnCountdownTimer) {
+      clearInterval(this.endTurnCountdownTimer)
+      this.endTurnCountdownTimer = null
+    }
+    if (this.data.isEndTurnCountdownActive || this.data.endTurnCountdown) {
+      this.setData({
+        endTurnCountdown: 0,
+        isEndTurnCountdownActive: false
+      })
+    }
+  },
+
+  getSelectedPairType(gameState) {
+    if (!gameState || !gameState.players || !gameState.players[0]) return ''
+    const selected = (gameState.selectedHandIndexes || []).slice().sort((a, b) => a - b)
+    if (selected.length !== 2) return ''
+    const hand = gameState.players[0].hand || []
+    return getPairType(hand[selected[0]], hand[selected[1]])
+  },
+
+  clearPlayerSelection(gameState) {
+    const player = gameState && gameState.players && gameState.players[0]
+    if (!player) return
+    gameState.selectedHandIndexes = []
+    player.hand = (player.hand || []).map((card) => ({
+      ...card,
+      selected: false
+    }))
   },
 
   addLog(gameState, text) {
@@ -278,6 +374,14 @@ Page({
     if (currentIndex >= 0) {
       selected.splice(currentIndex, 1)
     } else if (selected.length < 2) {
+      if (selected.length === 1) {
+        const firstCard = gameState.players[0].hand[selected[0]]
+        const secondCard = gameState.players[0].hand[index]
+        if (!getPairType(firstCard, secondCard)) {
+          this.showToast('这两张牌不能组成组合')
+          return
+        }
+      }
       selected.push(index)
     } else {
       this.showToast('最多选择 2 张牌')
@@ -290,6 +394,7 @@ Page({
       selected: selected.indexOf(cardIndex) >= 0
     }))
     this.updateGameState(gameState)
+    this.startEndTurnCountdown(true)
   },
 
   playPair() {
@@ -310,6 +415,7 @@ Page({
       return
     }
 
+    this.clearEndTurnCountdown()
     player.hand.splice(selected[1], 1)
     player.hand.splice(selected[0], 1)
     player.hand = player.hand.map((card) => ({
@@ -357,6 +463,7 @@ Page({
         this.addLog(gameState, '螃蟹组合效果无法触发：弃牌堆为空。')
         gameState.phase = 'action'
       } else {
+        gameState.crabSelectedPile = ''
         gameState.phase = 'crabChoice'
       }
       this.updateGameState(gameState)
@@ -379,18 +486,51 @@ Page({
     }
   },
 
-  takeCrabEffectCard(event) {
+  selectCrabPile(event) {
     const gameState = this.data.gameState
     if (!this.ensurePhase('crabChoice', '当前不能选择螃蟹效果')) return
 
     const pile = event.currentTarget.dataset.pile
     const discardPile = pile === 'A' ? gameState.discardPileA : gameState.discardPileB
     if (!discardPile.length) {
+      this.showToast('这个弃牌堆为空')
+      return
+    }
+
+    gameState.crabSelectedPile = pile
+    this.addLog(gameState, `螃蟹效果：你选择了弃牌堆 ${pile}。`)
+    this.updateGameState(gameState)
+  },
+
+  resetCrabPileSelection() {
+    const gameState = this.data.gameState
+    if (!this.ensurePhase('crabChoice', '当前不能选择螃蟹效果')) return
+    gameState.crabSelectedPile = ''
+    this.updateGameState(gameState)
+  },
+
+  takeCrabEffectCard(event) {
+    const gameState = this.data.gameState
+    if (!this.ensurePhase('crabChoice', '当前不能选择螃蟹效果')) return
+
+    const pile = gameState.crabSelectedPile
+    if (!pile) {
+      this.showToast('请先选择一个弃牌堆')
+      return
+    }
+    const cardIndex = Number(event.currentTarget.dataset.index)
+    const discardPile = pile === 'A' ? gameState.discardPileA : gameState.discardPileB
+    if (!discardPile.length) {
       this.showToast('弃牌堆为空')
       return
     }
 
-    const card = discardPile.pop()
+    if (Number.isNaN(cardIndex) || cardIndex < 0 || cardIndex >= discardPile.length) {
+      this.showToast('这张牌不能选择')
+      return
+    }
+
+    const card = discardPile.splice(cardIndex, 1)[0]
     gameState.players[0].hand.push(card)
     if (this.checkMermaidWin(gameState)) return
     gameState.phase = 'action'
@@ -401,6 +541,7 @@ Page({
   stopRound() {
     const gameState = this.data.gameState
     if (!this.canPlayerCall()) return
+    this.clearEndTurnCountdown()
     gameState.roundEndReason = 'playerStop'
     this.finishRound(gameState, 'stop', '你选择立即停止，本轮进入正常结算。')
   },
@@ -408,6 +549,7 @@ Page({
   callLastChance() {
     const gameState = this.data.gameState
     if (!this.canPlayerCall()) return
+    this.clearEndTurnCountdown()
     gameState.phase = 'lastChanceAi'
     gameState.roundEndReason = 'playerLastChance'
     this.addLog(gameState, '你宣布最后机会，AI 将进行最后一回合。')
@@ -418,9 +560,10 @@ Page({
     }, 500)
   },
 
-  endTurn() {
+  endTurn(options = {}) {
     const gameState = this.data.gameState
     if (!this.ensurePhase('action', '当前不能结束回合')) return
+    this.clearEndTurnCountdown()
     if (gameState.isLastChanceFinalTurn) {
       gameState.isLastChanceFinalTurn = false
       this.finishRound(gameState, 'lastChance', '你完成最后一回合，进入最后机会结算。')
@@ -428,8 +571,8 @@ Page({
     }
     gameState.currentPlayerIndex = 1
     gameState.phase = 'ai'
-    gameState.selectedHandIndexes = []
-    this.addLog(gameState, '你结束了回合，轮到 AI。')
+    this.clearPlayerSelection(gameState)
+    this.addLog(gameState, options.auto ? '倒计时结束，自动结束回合，轮到 AI。' : '你结束了回合，轮到 AI。')
     this.updateGameState(gameState)
 
     setTimeout(() => {
@@ -587,6 +730,7 @@ Page({
   },
 
   finishRound(gameState, scoringMode, logText) {
+    this.clearEndTurnCountdown()
     this.updateScores(gameState)
     const player = gameState.players[0]
     const ai = gameState.players[1]
@@ -620,14 +764,31 @@ Page({
     gameState.phase = player.totalScore >= TARGET_SCORE || ai.totalScore >= TARGET_SCORE ? 'gameover' : 'settlement'
     this.addLog(gameState, logText)
 
-    wx.setStorageSync('totalScores', {
+    const totalScores = {
       player: player.totalScore,
       ai: ai.totalScore
+    }
+    wx.setStorageSync('totalScores', totalScores)
+
+    if (gameState.phase === 'gameover') {
+      wx.setStorageSync('lastGameState', gameState)
+      wx.navigateTo({
+        url: '/pages/result/result'
+      })
+      return
+    }
+
+    wx.removeStorageSync('lastGameState')
+    this.updateGameState(gameState)
+    wx.showToast({
+      title: `本轮 ${player.score}:${ai.score}，总分 ${player.totalScore}:${ai.totalScore}`,
+      icon: 'none',
+      duration: 1200
     })
-    wx.setStorageSync('lastGameState', gameState)
-    wx.navigateTo({
-      url: '/pages/result/result'
-    })
+
+    setTimeout(() => {
+      this.initGame(`上一轮结束：你 ${player.score} 分，AI ${ai.score} 分。总分 ${totalScores.player}:${totalScores.ai}。`)
+    }, 1200)
   },
 
   checkMermaidWin(gameState) {

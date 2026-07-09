@@ -18,6 +18,14 @@ Page({
       return
     }
 
+    if (gameState.phase !== 'gameover') {
+      wx.removeStorageSync('lastGameState')
+      this.setData({
+        result: null
+      })
+      return
+    }
+
     const player = gameState.players[0]
     const ai = gameState.players[1]
     const playerWin = player.totalScore >= TARGET_SCORE && player.totalScore >= ai.totalScore
@@ -37,7 +45,7 @@ Page({
         baseScores: gameState.baseScores || { player: player.score, ai: ai.score },
         targetScore: TARGET_SCORE,
         isGameOver,
-        winnerText: playerWin ? '你获得胜利' : aiWin ? 'AI 获得胜利' : '本轮结算完成',
+        winnerText: playerWin ? '你获得胜利' : aiWin ? 'AI 获得胜利' : '游戏结束',
         roundEndReasonText: this.getRoundEndReasonText(gameState.roundEndReason),
         scoringModeText: modeTextMap[gameState.scoringMode] || '正常结算'
       }
@@ -55,12 +63,6 @@ Page({
     }
 
     return reasonTextMap[roundEndReason] || '本轮结束'
-  },
-
-  nextRound() {
-    wx.redirectTo({
-      url: '/pages/game/game'
-    })
   },
 
   restartGame() {

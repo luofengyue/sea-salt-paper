@@ -197,3 +197,72 @@
   opacity: 0.86;
   transform: scale(0.99);
 }
+
+/* Macaron blue palette */
+.page {
+  background:
+    linear-gradient(135deg, rgba(143, 211, 244, 0.16) 0, rgba(143, 211, 244, 0.16) 1rpx, transparent 1rpx, transparent 24rpx),
+    linear-gradient(180deg, #f4fbff 0%, #e3f6ff 48%, #f8fdff 100%);
+}
+
+.kicker {
+  color: #3f8fbb;
+}
+
+.title,
+.room-number,
+.player-status,
+.action-button {
+  color: #24485f;
+}
+
+.room-card {
+  background: #6eb9df;
+  box-shadow: 0 18rpx 36rpx rgba(80, 150, 190, 0.2);
+}
+
+.room-label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.room-number {
+  color: #ffffff;
+}
+
+.player-list {
+  background: rgba(216, 243, 255, 0.52);
+}
+
+.player-item {
+  box-shadow: 0 12rpx 26rpx rgba(80, 150, 190, 0.12);
+}
+
+.player-index,
+.player-status.ready,
+.action-button.primary {
+  background: #d8f3ff;
+  color: #24485f;
+}
+
+.player-status.waiting {
+  background: #b9dcff;
+  color: #ffffff;
+}
+
+.player-name {
+  color: #31586f;
+}
+
+.action-button {
+  box-shadow: 0 12rpx 28rpx rgba(80, 150, 190, 0.12);
+}
+
+.action-button.primary {
+  background: #8fd3f4;
+  color: #ffffff;
+  box-shadow: 0 16rpx 34rpx rgba(111, 185, 223, 0.28);
+}
+
+.action-button.secondary {
+  color: #5f8196;
+}
