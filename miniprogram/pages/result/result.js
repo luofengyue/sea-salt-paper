@@ -1,4 +1,5 @@
 const TARGET_SCORE = 40
+const { playSound } = require('../../utils/soundManager')
 
 Page({
   data: {
@@ -50,6 +51,7 @@ Page({
         scoringModeText: modeTextMap[gameState.scoringMode] || '正常结算'
       }
     })
+    playSound('win')
   },
 
   getRoundEndReasonText(roundEndReason) {
@@ -66,6 +68,7 @@ Page({
   },
 
   restartGame() {
+    playSound('click')
     wx.removeStorageSync('totalScores')
     wx.removeStorageSync('lastGameState')
     wx.redirectTo({
@@ -74,6 +77,7 @@ Page({
   },
 
   goHome() {
+    playSound('click')
     wx.removeStorageSync('lastGameState')
     wx.reLaunch({
       url: '/pages/home/home'

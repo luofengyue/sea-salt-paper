@@ -1,5 +1,11 @@
 <view class="page">
-  <button class="hall-button" bindtap="goToLobby" hover-class="button-press">‹ 桌游大厅</button>
+  <view class="top-row">
+    <button class="hall-button" bindtap="goToLobby" hover-class="button-press">‹ 桌游大厅</button>
+    <view class="sound-setting">
+      <text class="sound-label">音效</text>
+      <switch class="sound-switch" checked="{{soundEnabled}}" color="#8fd3f4" bindchange="toggleSound"></switch>
+    </view>
+  </view>
 
   <view class="sea-surface">
     <view class="wave-layer"></view>

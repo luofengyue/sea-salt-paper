@@ -1,4 +1,5 @@
 const { cards } = require('../../utils/cardData')
+const { playSound } = require('../../utils/soundManager')
 
 Page({
   data: {
@@ -6,6 +7,7 @@ Page({
   },
 
   goHome() {
+    playSound('click')
     wx.reLaunch({
       url: '/pages/home/home'
     })

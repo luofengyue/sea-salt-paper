@@ -1,3 +1,5 @@
+const { playSound } = require('../../utils/soundManager')
+
 Page({
   data: {
     roomNumber: '8392',
@@ -10,6 +12,7 @@ Page({
   },
 
   showInviteTip() {
+    playSound('click')
     wx.showToast({
       title: '邀请功能后续开发',
       icon: 'none'
@@ -17,12 +20,14 @@ Page({
   },
 
   startGame() {
+    playSound('click')
     wx.navigateTo({
       url: '/pages/game/game'
     })
   },
 
   goHome() {
+    playSound('click')
     wx.reLaunch({
       url: '/pages/home/home'
     })

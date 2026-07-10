@@ -51,6 +51,34 @@
   box-sizing: border-box;
 }
 
+.phase-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12rpx;
+  flex-shrink: 0;
+}
+
+.sound-setting {
+  height: 42rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8rpx;
+}
+
+.sound-label {
+  color: #5f8196;
+  font-size: 22rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sound-switch {
+  transform: scale(0.68);
+  transform-origin: right center;
+}
+
 .phase-text {
   display: block;
   margin-top: 16rpx;

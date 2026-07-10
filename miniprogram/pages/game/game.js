@@ -9,6 +9,7 @@ const {
   findPlayablePair,
   getPairType
 } = require('../../utils/gameUtils')
+const { isSoundEnabled, setSoundEnabled, playSound } = require('../../utils/soundManager')
 
 const TARGET_SCORE = 40
 const CALL_SCORE = 7
@@ -36,7 +37,8 @@ Page({
     endTurnCountdown: 0,
     isEndTurnCountdownActive: false,
     crabSelectedPile: '',
-    crabSelectedPileCards: []
+    crabSelectedPileCards: [],
+    soundEnabled: true
   },
 
   endTurnTimer: null,
@@ -49,11 +51,25 @@ Page({
     this.initGame()
   },
 
+  onShow() {
+    this.setData({
+      soundEnabled: isSoundEnabled()
+    })
+  },
+
   onUnload() {
     this.clearEndTurnCountdown()
   },
 
+  toggleSound(event) {
+    const enabled = event.detail.value
+    setSoundEnabled(enabled)
+    this.setData({ soundEnabled: enabled })
+    if (enabled) playSound('click')
+  },
+
   initGame(openingLog = '') {
+    playSound('round')
     const totalScores = wx.getStorageSync('totalScores') || { player: 0, ai: 0 }
     const deck = shuffleDeck(createDeck(cards))
     const discardPileA = [deck.shift()]
@@ -187,6 +203,7 @@ Page({
     this.endTurnCountdownTimer = setInterval(() => {
       remaining -= 1
       if (remaining > 0) {
+        playSound('tick')
         this.setData({ endTurnCountdown: remaining })
       }
     }, 1000)
@@ -240,6 +257,7 @@ Page({
   },
 
   showToast(title) {
+    playSound('fail')
     wx.showToast({
       title,
       icon: 'none'
@@ -276,6 +294,7 @@ Page({
     }
 
     const drawResult = drawCards(gameState.deck, 2)
+    playSound('flip')
     gameState.deck = drawResult.deck
     gameState.tempDrawCards = drawResult.drawnCards
     gameState.phase = 'choose'
@@ -295,6 +314,7 @@ Page({
       return
     }
 
+    playSound('pop')
     gameState.players[0].hand.push(keepCard)
     if (this.checkMermaidWin(gameState)) return
     gameState.pendingDiscardCard = discardCard
@@ -328,6 +348,7 @@ Page({
     }
 
     const card = gameState.pendingDiscardCard
+    playSound('flip')
     if (pile === 'A') {
       gameState.discardPileA.push(card)
     } else {
@@ -353,6 +374,7 @@ Page({
 
     const takeIndex = Number.isNaN(cardIndex) ? discardPile.length - 1 : cardIndex
     const card = discardPile.splice(takeIndex, 1)[0]
+    playSound('pop')
     gameState.players[0].hand.push(card)
     if (this.checkMermaidWin(gameState)) return
     gameState.phase = 'action'
@@ -389,6 +411,7 @@ Page({
     }
 
     gameState.selectedHandIndexes = selected
+    playSound('pop')
     gameState.players[0].hand = gameState.players[0].hand.map((card, cardIndex) => ({
       ...card,
       selected: selected.indexOf(cardIndex) >= 0
@@ -415,6 +438,7 @@ Page({
       return
     }
 
+    playSound('success')
     this.clearEndTurnCountdown()
     player.hand.splice(selected[1], 1)
     player.hand.splice(selected[0], 1)
@@ -498,6 +522,7 @@ Page({
     }
 
     gameState.crabSelectedPile = pile
+    playSound('click')
     this.addLog(gameState, `螃蟹效果：你选择了弃牌堆 ${pile}。`)
     this.updateGameState(gameState)
   },
@@ -505,6 +530,7 @@ Page({
   resetCrabPileSelection() {
     const gameState = this.data.gameState
     if (!this.ensurePhase('crabChoice', '当前不能选择螃蟹效果')) return
+    playSound('click')
     gameState.crabSelectedPile = ''
     this.updateGameState(gameState)
   },
@@ -531,6 +557,7 @@ Page({
     }
 
     const card = discardPile.splice(cardIndex, 1)[0]
+    playSound('pop')
     gameState.players[0].hand.push(card)
     if (this.checkMermaidWin(gameState)) return
     gameState.phase = 'action'
@@ -541,6 +568,7 @@ Page({
   stopRound() {
     const gameState = this.data.gameState
     if (!this.canPlayerCall()) return
+    playSound('click')
     this.clearEndTurnCountdown()
     gameState.roundEndReason = 'playerStop'
     this.finishRound(gameState, 'stop', '你选择立即停止，本轮进入正常结算。')
@@ -549,6 +577,7 @@ Page({
   callLastChance() {
     const gameState = this.data.gameState
     if (!this.canPlayerCall()) return
+    playSound('click')
     this.clearEndTurnCountdown()
     gameState.phase = 'lastChanceAi'
     gameState.roundEndReason = 'playerLastChance'
@@ -563,6 +592,7 @@ Page({
   endTurn(options = {}) {
     const gameState = this.data.gameState
     if (!this.ensurePhase('action', '当前不能结束回合')) return
+    playSound(options.auto ? 'tick' : 'click')
     this.clearEndTurnCountdown()
     if (gameState.isLastChanceFinalTurn) {
       gameState.isLastChanceFinalTurn = false
@@ -780,6 +810,7 @@ Page({
 
     wx.removeStorageSync('lastGameState')
     this.updateGameState(gameState)
+    playSound('round')
     wx.showToast({
       title: `本轮 ${player.score}:${ai.score}，总分 ${player.totalScore}:${ai.totalScore}`,
       icon: 'none',

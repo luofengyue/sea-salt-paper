@@ -2,7 +2,13 @@
   <view class="phase-banner">
     <view class="phase-row">
       <text class="phase-title">AI 练习</text>
-      <text class="phase-badge">单机桌面</text>
+      <view class="phase-tools">
+        <text class="phase-badge">单机桌面</text>
+        <view class="sound-setting">
+          <text class="sound-label">音效</text>
+          <switch class="sound-switch" checked="{{soundEnabled}}" color="#8fd3f4" bindchange="toggleSound"></switch>
+        </view>
+      </view>
     </view>
     <text class="phase-text">{{phaseText}}</text>
   </view>

@@ -5,6 +5,11 @@
     <text class="subtitle">选择一个桌游开始练习</text>
   </view>
 
+  <view class="sound-setting">
+    <text class="sound-label">音效</text>
+    <switch class="sound-switch" checked="{{soundEnabled}}" color="#8fd3f4" bindchange="toggleSound"></switch>
+  </view>
+
   <view class="game-grid">
     <button class="game-card primary-card" bindtap="openSeaSaltPaper" hover-class="card-press">
       <view class="game-art">
